@@ -147,8 +147,6 @@
 
   document.getElementById("co-back").addEventListener("click", function () { showStep(1); });
   function getTrialSignupUrl() {
-    var testMode = new URLSearchParams(window.location.search).get("turnia_test");
-    if (testMode === "beta") return "https://beta.turniahealth.com.ar/api/public/trial-signup";
     return C.trialSignupUrl || "";
   }
 
