@@ -1,0 +1,124 @@
+{
+  "redirects": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://app.turniahealth.com.ar/api/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/auth/:path*",
+      "destination": "https://app.turniahealth.com.ar/auth/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/dashboard/:path*",
+      "destination": "https://app.turniahealth.com.ar/dashboard/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/agenda/:path*",
+      "destination": "https://app.turniahealth.com.ar/agenda/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/patients/:path*",
+      "destination": "https://app.turniahealth.com.ar/patients/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/settings/:path*",
+      "destination": "https://app.turniahealth.com.ar/settings/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/notifications/:path*",
+      "destination": "https://app.turniahealth.com.ar/notifications/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/billing/:path*",
+      "destination": "https://app.turniahealth.com.ar/billing/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/payments/:path*",
+      "destination": "https://app.turniahealth.com.ar/payments/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/planning/:path*",
+      "destination": "https://app.turniahealth.com.ar/planning/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/prescriptions/:path*",
+      "destination": "https://app.turniahealth.com.ar/prescriptions/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/reimbursements/:path*",
+      "destination": "https://app.turniahealth.com.ar/reimbursements/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/reminders/:path*",
+      "destination": "https://app.turniahealth.com.ar/reminders/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "https://app.turniahealth.com.ar/services/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/waitlist/:path*",
+      "destination": "https://app.turniahealth.com.ar/waitlist/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/metrics/:path*",
+      "destination": "https://app.turniahealth.com.ar/metrics/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/search/:path*",
+      "destination": "https://app.turniahealth.com.ar/search/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/help/:path*",
+      "destination": "https://app.turniahealth.com.ar/help/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/onboarding/:path*",
+      "destination": "https://app.turniahealth.com.ar/onboarding/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/subscription/:path*",
+      "destination": "https://app.turniahealth.com.ar/subscription/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/login",
+      "destination": "https://app.turniahealth.com.ar/login",
+      "permanent": false
+    },
+    {
+      "source": "/signup/:path*",
+      "destination": "https://app.turniahealth.com.ar/signup/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/forgot-password",
+      "destination": "https://app.turniahealth.com.ar/forgot-password",
+      "permanent": false
+    },
+    {
+      "source": "/first-access/:path*",
+      "destination": "https://app.turniahealth.com.ar/first-access/:path*",
+      "permanent": false
+    }
+  ]
+}
