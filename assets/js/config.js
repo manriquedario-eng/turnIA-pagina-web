@@ -28,12 +28,12 @@ window.TURNIA_CONFIG = {
 
   // Link de ingreso a la aplicación. Se completa cuando se defina
   // app.turniahealth.com.ar (NO se cambia DNS desde este proyecto).
-  appLoginUrl: "https://www.turniahealth.com.ar/login",
+  appLoginUrl: "https://app.turniahealth.com.ar/login",
 
   // Alta de la prueba gratis (sin tarjeta). Endpoint del backend que recibe los datos
   // del formulario (POST JSON) y envía el email de acceso. Vacío = modo preview.
   // Flujo: datos → alta de prueba → email con acceso → a los 14 días, suscripción con Mercado Pago.
-  trialSignupUrl: "",
+  trialSignupUrl: "https://app.turniahealth.com.ar/api/public/trial-signup",
 
   // Link de suscripción de Mercado Pago (se usa al terminar la prueba, desde la app o el email).
   mercadoPagoCheckoutUrl: ""
