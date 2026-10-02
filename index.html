@@ -343,11 +343,6 @@
         <div class="pc-plan">
           <div class="pc-name"><span class="pc-badge"><svg class="ico"><use href="#i-shield"/></svg></span><div><h3>TurnIA Profesional</h3><p>Todo lo que necesitás en un solo plan.</p></div></div>
           <p class="pc-trial"><svg class="ico"><use href="#i-clock"/></svg>14 días de prueba gratis</p>
-          <div class="billing" role="radiogroup" aria-label="Forma de pago">
-            <button type="button" role="radio" aria-checked="true" data-billing="mensual">Mensual</button>
-            <button type="button" role="radio" aria-checked="false" data-billing="semestral">6 meses<small>1 mes gratis</small></button>
-            <button type="button" role="radio" aria-checked="false" data-billing="anual" class="best">12 meses<small>3 meses gratis</small></button>
-          </div>
           <p class="pc-price"><span class="amount" data-price-amount>$29.900</span><span class="per" data-price-per>/ mes</span><span class="tax" data-price-tax>Impuestos incluidos</span></p>
           <button class="btn btn-primary btn-block btn-lg" data-checkout>Empezar prueba gratis <svg class="ico"><use href="#i-arrow-right"/></svg></button>
           <p class="pc-safe"><svg class="ico"><use href="#i-lock"/></svg>Sin tarjeta para probar. Después, pagás con Mercado Pago.</p>
@@ -398,7 +393,7 @@
         <details><summary>¿Cómo funciona Mercado Pago?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>La suscripción a TurnIA se paga mediante Mercado Pago, al terminar los 14 días de prueba. Además, podés cobrar turnos a tus pacientes con Mercado Pago desde la plataforma. Las cancelaciones o ausencias de un paciente con turno pago no generan devoluciones automáticas.</p></details>
       </div>
       <div class="faq-col">
-        <details><summary>¿Cómo funciona la prueba gratis?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Tenés 14 días para usar TurnIA sin cargar tarjeta de crédito. Al terminar, si querés seguir, te suscribís con Mercado Pago. Podés elegir pago mensual ($29.900 por mes), 6 meses ($149.500: pagás 5 y te regalamos 1) o 12 meses ($269.100: pagás 9 y te regalamos 3). Todos los precios tienen impuestos incluidos. Si no te suscribís, no se te cobra nada.</p></details>
+        <details><summary>¿Cómo funciona la prueba gratis?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Tenés 14 días para usar TurnIA sin cargar tarjeta de crédito. Al terminar, si querés seguir, te suscribís con Mercado Pago por $29.900 por mes, impuestos incluidos. Si no te suscribís, no se te cobra nada.</p></details>
         <details><summary>¿Puedo facturar desde TurnIA?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. TurnIA tiene facturación electrónica ARCA integrada, para que emitas tus comprobantes sin salir del sistema. Necesitás tener tu situación fiscal en ARCA habilitada para facturar electrónicamente.</p></details>
         <details><summary>¿La firma digital tiene validez legal?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. La firma digital se realiza a través de Digilogix, proveedor de firma digital con validez jurídica, integrado a TurnIA. El certificado de firma digital lo gestiona cada profesional directamente con Digilogix: TurnIA te permite usarlo para firmar sin salir de la plataforma.</p></details>
         <details><summary>¿Cómo funciona la receta electrónica?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Emitís la receta desde TurnIA, a través de la integración con MisRx, y se la hacés llegar a tu paciente sin salir de la plataforma.</p></details>
@@ -481,6 +476,7 @@
         <label>Nombre<input name="nombre" autocomplete="given-name" required></label>
         <label>Apellido<input name="apellido" autocomplete="family-name" required></label>
         <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Contraseña <small>(mínimo 10 caracteres)</small><input name="password" type="password" autocomplete="new-password" minlength="10" maxlength="128" required></label>
         <label>WhatsApp<input name="whatsapp" type="tel" autocomplete="tel" placeholder="Ej: 11 5555 5555" required></label>
         <label>Profesión<select name="profesion" required>
           <option value="">Seleccioná…</option>
@@ -488,6 +484,7 @@
         </select></label>
         <label>CUIT/CUIL <small>(si corresponde)</small><input name="cuit" inputmode="numeric" placeholder="20-12345678-9"></label>
       </div>
+      <label aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Sitio web<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="co-terms"><input type="checkbox" name="terminos" required> Acepto los <a href="legales/terminos.html" target="_blank" rel="noopener">términos y condiciones</a> y la <a href="legales/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</label>
       <p class="co-error" role="alert" hidden></p>
       <button class="btn btn-primary btn-block btn-lg" type="submit">Continuar <svg class="ico"><use href="#i-arrow-right"/></svg></button>

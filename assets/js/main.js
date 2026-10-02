@@ -59,6 +59,14 @@
   /* ---------- Forma de pago: mensual / 6 meses / 12 meses ---------- */
   var PLANS = C.billing || {};
   var billing = "mensual";
+  var signupRequestId = null;
+  function newRequestId() {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") return window.crypto.randomUUID();
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0, v = c === "x" ? r : (r & 3 | 8);
+      return v.toString(16);
+    });
+  }
   function money(n) { return "$" + Math.round(n).toLocaleString("es-AR"); }
   function renderBilling() {
     var p = PLANS[billing]; if (!p) return;
@@ -94,6 +102,7 @@
   }
   function openModal() {
     lastFocus = document.activeElement;
+    signupRequestId = newRequestId();
     modal.hidden = false; document.body.style.overflow = "hidden"; showStep(1);
     setTimeout(function () { form.querySelector("input").focus(); }, 30);
   }
@@ -124,6 +133,7 @@
     if (!f.nombre.value.trim()) bad(f.nombre, "Ingresá tu nombre.");
     if (!f.apellido.value.trim()) bad(f.apellido, "Ingresá tu apellido.");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim())) bad(f.email, "Ingresá un email válido.");
+    if (f.password.value.length < 10 || f.password.value.length > 128) bad(f.password, "La contraseña debe tener entre 10 y 128 caracteres.");
     if (f.whatsapp.value.replace(/\D/g, "").length < 8) bad(f.whatsapp, "Ingresá un número de WhatsApp válido.");
     if (!f.profesion.value) bad(f.profesion, "Seleccioná tu profesión.");
     if (f.cuit.value.trim() && !validCuit(f.cuit.value)) bad(f.cuit, "Revisá el CUIT/CUIL (11 dígitos).");
@@ -144,9 +154,20 @@
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        requestId: signupRequestId || newRequestId(),
         nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(),
+        password: f.password.value,
         whatsapp: f.whatsapp.value.trim(), profesion: f.profesion.value, cuit: f.cuit.value.trim(),
-        aceptaTerminos: f.terminos.checked, plan: "profesional", facturacion: billing, pruebaDias: C.trialDays
+        website: f.website ? f.website.value.trim() : "",
+        aceptaTerminos: f.terminos.checked,
+        facturacion: "mensual",
+        termsVersion: C.termsVersion,
+        privacyVersion: C.privacyVersion,
+        source: "commercial_web",
+        utmSource: new URLSearchParams(window.location.search).get("utm_source") || "",
+        utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "",
+        utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
+        referrer: document.referrer || ""
       })
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
