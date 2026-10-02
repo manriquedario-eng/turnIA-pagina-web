@@ -146,11 +146,18 @@
   });
 
   document.getElementById("co-back").addEventListener("click", function () { showStep(1); });
+  function getTrialSignupUrl() {
+    var testMode = new URLSearchParams(window.location.search).get("turnia_test");
+    if (testMode === "beta") return "https://beta.turniahealth.com.ar/api/public/trial-signup";
+    return C.trialSignupUrl || "";
+  }
+
   document.getElementById("co-pay").addEventListener("click", function () {
     var btn = this, f = form.elements;
-    if (!C.trialSignupUrl) { document.getElementById("co-preview").hidden = false; return; }
+    var trialSignupUrl = getTrialSignupUrl();
+    if (!trialSignupUrl) { document.getElementById("co-preview").hidden = false; return; }
     btn.disabled = true;
-    fetch(C.trialSignupUrl, {
+    fetch(trialSignupUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
