@@ -695,3 +695,14 @@ ul,ol{margin:0;padding:0;list-style:none}
   .request-form { padding:18px; }
   .footer-bottom .legal-actions { width:100%; }
 }
+
+.legal-quick-actions { border-top:1px solid var(--line, #dce5e4); background:rgba(11,110,96,.035); }
+.legal-quick-inner { display:flex; justify-content:space-between; align-items:center; gap:28px; padding-top:28px; padding-bottom:28px; }
+.legal-quick-inner h2 { margin:0 0 6px; font-size:1.05rem; }
+.legal-quick-inner p { margin:0; max-width:650px; }
+.legal-quick-buttons { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; }
+@media (max-width:760px) {
+  .legal-quick-inner { align-items:flex-start; flex-direction:column; }
+  .legal-quick-buttons { width:100%; justify-content:flex-start; }
+  .legal-quick-buttons .btn { width:100%; text-align:center; }
+}
