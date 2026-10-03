@@ -34,6 +34,7 @@ window.TURNIA_CONFIG = {
   // del formulario (POST JSON) y envía el email de acceso. Vacío = modo preview.
   // Flujo: datos → alta de prueba → email con acceso → a los 14 días, suscripción con Mercado Pago.
   trialSignupUrl: "https://app.turniahealth.com.ar/api/public/trial-signup",
+  commercialRequestUrl: "https://app.turniahealth.com.ar/api/public/commercial-request",
 
   // Link de suscripción de Mercado Pago (se usa al terminar la prueba, desde la app o el email).
   mercadoPagoCheckoutUrl: ""
