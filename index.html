@@ -498,7 +498,11 @@
       </div>
       <button class="btn btn-primary btn-block btn-lg" id="co-pay" type="button">Empezar mi prueba gratis <svg class="ico"><use href="#i-arrow-right"/></svg></button>
       <p class="co-preview" id="co-preview" hidden>Modo preview: el alta de pruebas todavía no está conectada. Tus datos no se guardaron ni se enviaron.</p>
-      <p class="co-done" id="co-done" hidden>Solicitud recibida. Si es una cuenta nueva, te enviamos un email de confirmación. Si ya tenías una cuenta, podés ingresar con tu contraseña.</p>
+      <div class="co-done" id="co-done" hidden>
+        <strong>Solicitud recibida.</strong>
+        <p>Esto todavía no activa una suscripción ni genera ningún cobro.</p>
+        <p>Si es una cuenta nueva, te enviamos un email para confirmar el acceso. Si ya usabas ese correo en TurnIA, no se envía una confirmación nueva: podés <a href="https://app.turniahealth.com.ar/login">ingresar</a> o <a href="https://app.turniahealth.com.ar/forgot-password">restablecer tu contraseña</a>.</p>
+      </div>
       <button class="co-back" type="button" id="co-back">← Modificar mis datos</button>
       <p class="co-safe"><svg class="ico"><use href="#i-lock"/></svg>No te pedimos tarjeta. Al terminar la prueba, si querés seguir, te suscribís con Mercado Pago.</p>
     </div>
