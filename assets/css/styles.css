@@ -652,3 +652,46 @@ ul,ol{margin:0;padding:0;list-style:none}
 :root[data-theme="dark"] .modal-backdrop{background:rgba(0,0,0,.65)}
 
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* ===== Launch hardening: marca oficial + gestiones comerciales ===== */
+.brand-official { display:inline-flex; align-items:center; min-width:0; }
+.brand-logo-full { display:block; width:146px; max-width:42vw; height:auto; object-fit:contain; }
+.site-footer .brand-logo-full { width:150px; }
+.legal-header .brand-logo-full { width:142px; }
+
+.legal-actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.legal-action-link { font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+
+.request-page { max-width:820px; padding-bottom:56px; }
+.request-switch { display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 26px; }
+.request-form {
+  margin:24px 0;
+  padding:24px;
+  border:1px solid var(--line, #dce5e4);
+  border-radius:18px;
+  background:var(--card, #fff);
+}
+.request-form .co-fields { margin-bottom:14px; }
+.request-form label { display:flex; flex-direction:column; gap:7px; margin-bottom:14px; font-weight:500; }
+.request-form input,
+.request-form textarea,
+.request-form select {
+  width:100%;
+  border:1px solid var(--line, #cfdcda);
+  border-radius:10px;
+  padding:11px 12px;
+  background:var(--surface, #fff);
+  color:inherit;
+  font:inherit;
+}
+.request-form textarea { resize:vertical; min-height:110px; }
+.request-result { margin-top:16px; padding:12px 14px; border-radius:10px; line-height:1.45; }
+.request-result-ok { background:rgba(11,110,96,.10); }
+.request-result-error { background:rgba(166,40,40,.10); }
+
+@media (max-width:760px) {
+  .brand-logo-full { width:128px; max-width:48vw; }
+  .request-form { padding:18px; }
+  .footer-bottom .legal-actions { width:100%; }
+}
