@@ -22,7 +22,7 @@ def page(slug, title, body, css_href, asset_prefix, home_href):
 </head>
 <body>
 <header class="legal-header"><div class="container">
-  <a href="{home_href}" class="brand"><img src="{asset_prefix}assets/img/turnia-isotipo-192.png" alt="" class="brand-mark"><span class="brand-word">Turn<b>IA</b></span></a>
+  <a href="{home_href}" class="brand brand-official"><img src="{asset_prefix}assets/img/turnia-logo-original.png" alt="TurnIA" class="brand-logo-full"></a>
   <a href="{home_href}" class="legal-back">← Volver al inicio</a>
 </div></header>
 <main class="container"><article class="legal">
@@ -30,7 +30,7 @@ def page(slug, title, body, css_href, asset_prefix, home_href):
 </article></main>
 <footer class="legal-footer"><div class="container">
   <span>© 2026 TurnIA. Todos los derechos reservados.</span>
-  <span><a href="terminos.html">Términos y condiciones</a> · <a href="privacidad.html">Política de privacidad</a></span>
+  <span><a href="terminos.html">Términos y condiciones</a> · <a href="privacidad.html">Política de privacidad</a> · <a href="gestiones.html?tipo=arrepentimiento">Arrepentimiento</a> · <a href="gestiones.html?tipo=baja">Baja del servicio</a></span>
 </div></footer>
 </body>
 </html>
