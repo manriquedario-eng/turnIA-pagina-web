@@ -23,7 +23,7 @@ window.TURNIA_CONFIG = {
   billing: {
     mensual: { months: 1, total: 29900, per: "/ mes" }
   },
-  termsVersion: "2026-09-26",
+  termsVersion: "2026-10-02",
   privacyVersion: "2026-09-26",
 
   // Link de ingreso a la aplicación. Se completa cuando se defina
