@@ -1,46 +1,65 @@
-# TurnIA — Web comercial (proyecto independiente)
+# TurnIA — Web comercial
 
-Landing comercial de TurnIA, **separada de la aplicación**. No comparte código, repositorio, variables de entorno, Supabase ni integraciones con `manriquedario-eng/turnIA-web`.
+Landing comercial de TurnIA, separada de la aplicación principal.
 
-Destino futuro: `www.turniahealth.com.ar` (la app quedará en `app.turniahealth.com.ar`). **Este proyecto no toca DNS, Cloudflare ni producción.**
+- Web comercial: https://www.turniahealth.com.ar
+- Aplicación: https://app.turniahealth.com.ar
+- Repositorio de la app: `manriquedario-eng/turnIA-web`
 
-## Stack
-Sitio estático: HTML + CSS + JavaScript, sin dependencias ni build. Se puede servir desde cualquier hosting estático (Cloudflare Pages, Vercel, Netlify, S3) cuando se decida.
+## Estado actual
+
+Sitio estático HTML + CSS + JavaScript, desplegado en Vercel.
+
+El lanzamiento comercial inicial usa:
+
+- plan único TurnIA Profesional;
+- ARS 29.900 por mes, impuestos incluidos;
+- 14 días de prueba gratis sin tarjeta;
+- alta comercial conectada a `/api/public/trial-signup`;
+- confirmación de email antes de activar la prueba;
+- suscripción mensual posterior mediante Mercado Pago;
+- email de acceso a TurnIA separado del email pagador de Mercado Pago;
+- contacto comercial por WhatsApp, email y formulario de ventas;
+- gestiones públicas de arrepentimiento y baja con número de solicitud.
+
+## Estructura
 
 ```
-index.html              Home (11 secciones, replica del mockup aprobado)
-assets/css/styles.css   Estilos (tokens en :root, responsive 1440 / 1024 / 760 / 420)
-assets/js/config.js     Datos comerciales y links. PÚBLICO: nunca poner keys ni tokens
-assets/js/main.js       Menú, FAQ, checkout preparado (sin cobro)
-assets/fonts/           Poppins + Lora Italic (self-hosted, licencia OFL)
-assets/logos/           Logos de terceros (WhatsApp, Google Calendar, Google Meet, OpenAI, Mercado Pago, Visa, Mastercard, Amex)
-legales/                Términos y Privacidad (se generan desde legales/_src/ con tools/build.py)
-tools/build.py          Genera las páginas legales y dist/ (versión de un solo archivo)
+index.html                         Landing comercial
+ventas.html                        Formulario para equipos/instituciones
+legales/terminos.html              Términos y condiciones
+legales/privacidad.html            Política de privacidad
+legales/gestiones.html             Arrepentimiento y baja del servicio
+assets/css/styles.css              Estilos
+assets/js/config.js                Configuración pública sin secretos
+assets/js/main.js                  Interacciones y alta de prueba
+assets/js/commercial-requests.js   Ventas y gestiones comerciales
+assets/img/turnia-logo-original.png Logo oficial TurnIA
+sw.js                              Compatibilidad transitoria con PWA antigua
+vercel.json                        Redirects heredados + headers de seguridad
+robots.txt / sitemap.xml           SEO técnico básico
 ```
 
-## Correr localmente
-```bash
-cd turnia-comercial
-python3 -m http.server 4321
-# abrir http://localhost:4321
-```
-(o `npx serve .`)
+## Seguridad
 
-## Pendientes antes de publicar
-0. **Logo TurnIA**: `assets/img/turnia-logo-original.png` es el original (1920px, fondo transparente). Las versiones usadas en la web son `turnia-isotipo.png` (512), `turnia-isotipo-192.png` y `favicon.png`.
-1. **Logo de ARCA**: `assets/logos/arca.png` sale de una captura provista por TurnIA. Si se consigue el archivo oficial en vector, reemplazarlo con el mismo nombre.
-2. **Prueba gratis (14 días, sin tarjeta)**: completar `trialSignupUrl` en `assets/js/config.js` con el endpoint del backend que da de alta la prueba y envía el email de acceso (recibe un POST JSON con los datos del formulario). Hoy el botón muestra un aviso de modo preview. El link de suscripción de Mercado Pago (`mercadoPagoCheckoutUrl`) se usará al terminar la prueba.
-   Flujo previsto: datos → Mercado Pago → pago aprobado → email automático → activación TurnIA.
-   Recomendación: crear la preferencia de pago del lado servidor (el access token de MP nunca va en el frontend) y pasar los datos del formulario como `external_reference`/metadata.
-3. **Link "Ingresar"**: completar `appLoginUrl` en `config.js` cuando exista `app.turniahealth.com.ar`.
-4. **Textos legales**: titular, domicilio, jurisdicción y plazos ya cargados en `legales/_src/`. Hacerlos revisar por un abogado antes de publicar (incluido botón de arrepentimiento y enlace a Defensa del Consumidor). Después de editar, correr `python3 tools/build.py`.
-5. Redes sociales: no se agregaron porque no hay cuentas confirmadas.
+`assets/js/config.js` es público. Nunca colocar allí access tokens, API keys, secretos, credenciales de Mercado Pago, Supabase service role ni ninguna otra credencial.
 
-## Datos y privacidad del checkout
-El formulario valida en el navegador y solo mantiene los datos en memoria mientras el modal está abierto. No usa localStorage, cookies ni envía nada a ningún servidor.
+El alta y las gestiones comerciales se procesan server-side en la aplicación TurnIA. La web comercial no contiene secretos ni accede directamente a Supabase o Mercado Pago.
 
-## Reglas de contenido respetadas
-- Sin la frase "No es una agenda", sin testimonios, sin "Próximamente" en firma digital.
-- Sin funciones inventadas; sin reembolsos automáticos (la FAQ aclara que cancelaciones/ausencias no generan devolución automática).
-- Precio: $29.900 / mes, impuestos incluidos. 6 meses: $149.500 (1 mes gratis). 12 meses: $269.100 (3 meses gratis). Valores en `config.js` (`billing`). 14 días de prueba gratis sin tarjeta. Sin mención de límites de WhatsApp. Certificado de Digilogix a cargo del profesional. Cancelación "según condiciones comerciales".
-- Pantallas de notebook, tablet y celular son mockups de marketing con datos ficticios, no capturas reales.
+## Reglas comerciales vigentes
+
+- Un único plan mensual.
+- Precio final: $29.900/mes, impuestos incluidos.
+- 14 días de prueba gratis sin tarjeta.
+- Mercado Pago SaaS es un circuito separado de los cobros que cada profesional hace a sus pacientes.
+- MisRx figura como integración disponible.
+- Digilogix figura como integración disponible; el certificado digital es personal y se gestiona/abona directamente con Digilogix.
+- Sin testimonios inventados.
+- Las pantallas de la landing son mockups comerciales con datos ficticios.
+
+## Pendientes no bloqueantes
+
+- incorporar video real de demostración;
+- reemplazar/optimizar activos gráficos pesados cuando corresponda;
+- agregar analítica sólo cuando se defina la política de medición/consentimiento;
+- revisar periódicamente textos legales y comerciales.
