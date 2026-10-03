@@ -133,6 +133,7 @@
     if (!f.nombre.value.trim()) bad(f.nombre, "Ingresá tu nombre.");
     if (!f.apellido.value.trim()) bad(f.apellido, "Ingresá tu apellido.");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim())) bad(f.email, "Ingresá un email válido.");
+    if (f.mercadopago_email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.mercadopago_email.value.trim())) bad(f.mercadopago_email, "Ingresá un e-mail de Mercado Pago válido.");
     if (f.password.value.length < 10 || f.password.value.length > 128) bad(f.password, "La contraseña debe tener entre 10 y 128 caracteres.");
     if (f.whatsapp.value.replace(/\D/g, "").length < 8) bad(f.whatsapp, "Ingresá un número de WhatsApp válido.");
     if (!f.profesion.value) bad(f.profesion, "Seleccioná tu profesión.");
@@ -141,7 +142,8 @@
     if (errors.length) { errBox.textContent = errors[0]; errBox.hidden = false; return; }
     errBox.hidden = true;
     var who = document.getElementById("co-who");
-    who.textContent = f.nombre.value.trim() + " " + f.apellido.value.trim() + " · " + f.email.value.trim() + " · " + f.profesion.value;
+    var payerEmail = f.mercadopago_email.value.trim() || f.email.value.trim();
+    who.textContent = f.nombre.value.trim() + " " + f.apellido.value.trim() + " · Acceso: " + f.email.value.trim() + " · Mercado Pago: " + payerEmail + " · " + f.profesion.value;
     showStep(2);
   });
 
@@ -161,6 +163,7 @@
       body: JSON.stringify({
         requestId: signupRequestId || newRequestId(),
         nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(),
+        mercadoPagoEmail: f.mercadopago_email.value.trim() || f.email.value.trim(),
         password: f.password.value,
         whatsapp: f.whatsapp.value.trim(), profesion: f.profesion.value, cuit: f.cuit.value.trim(),
         website: f.website ? f.website.value.trim() : "",
