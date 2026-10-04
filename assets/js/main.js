@@ -11,7 +11,10 @@
   document.querySelectorAll("[data-sales]").forEach(function (a) {
     a.href = "mailto:" + C.salesEmail + "?subject=" + encodeURIComponent("TurnIA para equipos / instituciones");
   });
-  document.querySelectorAll("[data-sales-mail]").forEach(function (a) { a.href = "mailto:" + C.salesEmail; });
+  document.querySelectorAll("[data-sales-mail]").forEach(function (a) {
+    a.href = "#contacto";
+    a.setAttribute("aria-haspopup", "dialog");
+  });
   document.querySelectorAll("[data-sales-email]").forEach(function (el) { el.textContent = C.salesEmail; });
   document.querySelectorAll("[data-wa-display]").forEach(function (el) { el.textContent = C.whatsappDisplay; });
   document.querySelectorAll("[data-login]").forEach(function (a) {
@@ -19,6 +22,36 @@
     else { a.addEventListener("click", function (e) { e.preventDefault(); }); a.title = "Link de ingreso a configurar"; }
   });
   var y = document.querySelector("[data-year]"); if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- Formulario propio de contacto ---------- */
+  var contactModal = document.getElementById("contact-modal");
+  var contactLastFocus = null;
+  function openContactModal(event) {
+    if (event) event.preventDefault();
+    if (!contactModal) return;
+    contactLastFocus = document.activeElement;
+    contactModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    var first = contactModal.querySelector("input:not([tabindex='-1'])");
+    if (first) setTimeout(function () { first.focus(); }, 30);
+  }
+  function closeContactModal() {
+    if (!contactModal) return;
+    contactModal.hidden = true;
+    document.body.style.overflow = "";
+    if (contactLastFocus && typeof contactLastFocus.focus === "function") contactLastFocus.focus();
+  }
+  document.querySelectorAll("[data-sales-mail]").forEach(function (a) {
+    a.addEventListener("click", openContactModal);
+  });
+  if (contactModal) {
+    contactModal.querySelectorAll("[data-contact-close]").forEach(function (el) {
+      el.addEventListener("click", closeContactModal);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !contactModal.hidden) closeContactModal();
+    });
+  }
 
   /* ---------- Header ---------- */
   var header = document.querySelector(".site-header");
