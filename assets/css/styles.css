@@ -706,3 +706,61 @@ ul,ol{margin:0;padding:0;list-style:none}
   .legal-quick-buttons { width:100%; justify-content:flex-start; }
   .legal-quick-buttons .btn { width:100%; text-align:center; }
 }
+
+
+/* TurnIA demo video — preview branch */
+.flow-visual.flow-video {
+  min-height: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+.demo-video-shell {
+  width: min(100%, 720px);
+  padding: 14px;
+  border: 1px solid rgba(10, 74, 87, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 60px rgba(7, 38, 45, 0.14);
+}
+.demo-video-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 2px 4px 12px;
+}
+.demo-video-kicker {
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--teal-700, #145b63);
+}
+.demo-video-duration {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--ink-500, #6b7d80);
+}
+.demo-video-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 16px;
+  background: #071b20;
+  object-fit: contain;
+}
+.demo-video-caption {
+  margin: 12px 4px 2px;
+  font-size: .9rem;
+  line-height: 1.45;
+  color: var(--ink-600, #53686b);
+}
+@media (max-width: 900px) {
+  .flow-visual.flow-video { width: 100%; margin-top: 22px; }
+  .demo-video-shell { width: 100%; padding: 10px; border-radius: 20px; }
+  .demo-video-player { border-radius: 13px; }
+}
