@@ -64,13 +64,26 @@
         return response.json();
       }).then(function (body) {
         var code = body && body.requestCode ? body.requestCode : "";
-        showResult(
-          form,
-          true,
-          code
-            ? "Solicitud registrada. Tu número de gestión es " + code + ". También te enviamos la constancia por email."
-            : "Solicitud registrada correctamente."
-        );
+        var notification = body && body.notification ? body.notification : null;
+        var emailWarning = notification && (notification.userEmail === false || notification.internalEmail === false);
+
+        if (emailWarning) {
+          showResult(
+            form,
+            true,
+            code
+              ? "Solicitud registrada. Tu número de gestión es " + code + ". Hubo un problema con alguna notificación por email; conservá este número y, si necesitás respuesta inmediata, escribinos a ventas@turniahealth.com.ar."
+              : "Solicitud registrada. Hubo un problema con alguna notificación por email; si necesitás respuesta inmediata, escribinos a ventas@turniahealth.com.ar."
+          );
+        } else {
+          showResult(
+            form,
+            true,
+            code
+              ? "Solicitud registrada. Tu número de gestión es " + code + ". También te enviamos la constancia por email."
+              : "Solicitud registrada correctamente."
+          );
+        }
         form.reset();
       }).catch(function () {
         showResult(form, false, "No pudimos registrar la solicitud. Probá nuevamente o escribinos a ventas@turniahealth.com.ar.");
