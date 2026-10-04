@@ -322,7 +322,7 @@
           <span class="demo-video-kicker">TurnIA en acción</span>
           <span class="demo-video-duration">Demo · 57 s</span>
         </div>
-        <video id="turnia-demo-video" class="demo-video-player" controls playsinline preload="metadata" aria-label="Video demostración de TurnIA"></video>
+        <video id="turnia-demo-video" class="demo-video-player" controls playsinline preload="metadata" aria-label="Video demostración de TurnIA"><source src="assets/demo-video/turnia-demo-preview.mp4" type="video/mp4"></video>
         <p class="demo-video-caption">Recorré TurnIA y mirá cómo se organiza el trabajo diario desde una sola plataforma.</p>
       </div>
     </div>
@@ -523,26 +523,5 @@
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
 
-<script>
-(() => {
-  const video = document.getElementById('turnia-demo-video');
-  if (!video) return;
-  const chunks = Array.from({ length: 5 }, (_, i) =>
-    `assets/demo-video/preview-${String(i).padStart(2, '0')}.txt`
-  );
-  Promise.all(chunks.map((url) => fetch(url).then((r) => {
-    if (!r.ok) throw new Error('No se pudo cargar el video');
-    return r.text();
-  })))
-    .then((parts) => {
-      video.src = 'data:video/mp4;base64,' + parts.join('');
-      video.load();
-    })
-    .catch(() => {
-      const caption = document.querySelector('.demo-video-caption');
-      if (caption) caption.textContent = 'La demo no pudo cargarse. Volvé a intentar en unos segundos.';
-    });
-})();
-</script>
 </body>
 </html>
