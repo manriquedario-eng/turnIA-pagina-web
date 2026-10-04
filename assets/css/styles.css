@@ -708,132 +708,28 @@ ul,ol{margin:0;padding:0;list-style:none}
 }
 
 
-/* =================== CARRUSEL CÓMO FUNCIONA =================== */
-.flow-heading{max-width:760px;margin:0 auto 24px;text-align:center}
-.flow-heading .lead{margin:7px auto 0}
-.product-carousel{position:relative;max-width:1080px;margin:0 auto;padding:0 0 38px}
-.product-carousel-viewport{overflow:hidden;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:0 22px 60px rgba(11,31,58,.13)}
-.product-carousel-track{display:flex;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform}
-.product-slide{flex:0 0 100%;margin:0;position:relative;background:var(--surface)}
-.product-slide img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-.product-slide figcaption{position:absolute;left:18px;bottom:18px;max-width:70%;padding:8px 13px;border-radius:10px;background:rgba(11,31,58,.82);color:#fff;font-size:12px;font-weight:600;line-height:1.35;backdrop-filter:blur(5px)}
-.carousel-arrow{position:absolute;top:calc(50% - 22px);z-index:4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.95);border:1px solid var(--line);box-shadow:var(--shadow);color:var(--navy);transition:transform .16s,background .16s}
-.carousel-arrow:hover{background:#fff;transform:scale(1.05)}
-.carousel-arrow:focus-visible{outline:3px solid var(--mint-200);outline-offset:2px}
-.carousel-arrow .ico{width:20px;height:20px}
-.carousel-prev{left:-22px}.carousel-next{right:-22px}
-.carousel-dots{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);display:flex;gap:8px;align-items:center}
-.carousel-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#C9D3D1;transition:width .2s,background .2s}
-.carousel-dots button.is-active{width:24px;border-radius:99px;background:var(--teal-600)}
-.flow-steps-under-carousel{max-width:1080px;margin:30px auto 0}
-@media (prefers-reduced-motion:reduce){.product-carousel-track{transition:none}}
-@media (max-width:1120px){.carousel-prev{left:10px}.carousel-next{right:10px}}
-@media (max-width:760px){
-  .flow{padding-top:28px}
-  .flow-heading{margin-bottom:18px;text-align:left}
-  .product-carousel{padding-bottom:34px}
-  .product-carousel-viewport{border-radius:15px}
-  .product-slide figcaption{left:10px;bottom:10px;max-width:82%;font-size:10.5px;padding:6px 9px}
-  .carousel-arrow{width:38px;height:38px;top:calc(50% - 20px)}
-  .carousel-prev{left:7px}.carousel-next{right:7px}
-  .flow-steps-under-carousel{grid-template-columns:repeat(4,1fr);row-gap:22px;margin-top:22px}
-  .flow-steps-under-carousel li:nth-child(4)::after{display:none}
-}
-@media (max-width:480px){
-  .product-slide figcaption{display:none}
-  .carousel-arrow{width:34px;height:34px}
-  .flow-steps-under-carousel{grid-template-columns:repeat(2,1fr);row-gap:22px}
-  .flow-steps-under-carousel li:nth-child(2n)::after{display:none}
-  .flow-steps-under-carousel li:nth-child(4)::after{display:none}
-}
-
-
-/* Native product snapshots for the carousel preview.
-   Built from the same visual language as TurnIA; no external media required. */
-.product-shot{
-  position:relative;
+/* =================== CARRUSEL REAL DE TURNIA =================== */
+.flow-showcase-head{max-width:760px;margin:0 auto 24px;text-align:center}
+.flow-showcase-head .lead{margin:7px auto 0}
+.turnia-app-carousel{
   display:block;
   width:100%;
-  aspect-ratio:16/9;
+  height:1120px;
+  border:0;
+  border-radius:20px;
   overflow:hidden;
-  background:
-    linear-gradient(90deg,#fff 0 22%,#f8f6f1 22% 100%);
-  color:#1f2b33;
+  background:#062e33;
+  box-shadow:0 22px 60px rgba(11,31,58,.13);
 }
-.product-shot::before{
-  content:"TurnIA\A\A PD  Profesional Demo\A Profesional\A\A PRINCIPAL\A Inicio\A Recordatorios\A Notificaciones\A\A CONSULTORIO\A Agenda\A Pacientes\A Recetas\A\A FINANZAS\A Pagos y caja\A Facturación";
-  white-space:pre;
-  position:absolute;
-  inset:4.2% auto 4.2% 2.4%;
-  width:17.5%;
-  padding:2.2% 1.5%;
-  border:1px solid #e6e1d9;
-  border-radius:18px;
-  background:#fff;
-  box-shadow:0 10px 28px rgba(31,43,51,.07);
-  font:500 clamp(6px,1.05vw,13px)/1.65 "Poppins",sans-serif;
-  color:#6d777c;
-}
-.product-shot::after{
-  white-space:pre-wrap;
-  position:absolute;
-  left:24.8%;
-  top:4.2%;
-  right:2.4%;
-  bottom:4.2%;
-  padding:3.2% 3.6%;
-  border:1px solid #e6e1d9;
-  border-radius:18px;
-  background:#fff;
-  box-shadow:0 10px 28px rgba(31,43,51,.07);
-  font-family:"Poppins",sans-serif;
-  color:#1f2b33;
-}
-.product-shot-dashboard::after{
-  content:"INICIO                                      Buscar paciente, turno…\A domingo, 4 de octubre\A\A Hola, Profesional\A Un nuevo día para organizar tu consultorio.\A\A TURNOS DE HOY        COBRADO              PENDIENTE\A 8                    $ 96.000             $ 24.000\A 6 confirmados        hoy                  por cobrar\A\A Próximo turno\A 10:30   Paciente Demo A                       Confirmado\A          Consulta · Presencial\A\A Agenda de hoy                         Pendientes y oportunidades\A 11:30  Paciente Demo B · Pendiente           1 turno pidió reprogramar\A 15:00  Paciente Demo C · Confirmado          2 pacientes en lista de espera\A 17:30  Paciente Demo D · Confirmado          $24.000 pendiente de cobro";
-  background:
-    linear-gradient(#dce8df,#dce8df) 5% 34%/28% 14% no-repeat,
-    linear-gradient(#ede6f2,#ede6f2) 36% 34%/28% 14% no-repeat,
-    linear-gradient(#f6eee4,#f6eee4) 67% 34%/28% 14% no-repeat,
-    #fff;
-}
-.product-shot-agenda::after{
-  content:"AGENDA                                    Buscar paciente, turno…\A domingo, 4 de octubre\A\A Agenda                                              + Nuevo turno\A Organizá tus turnos y seguí el estado de cada paciente.\A\A Día     Semana     Mes\A\A 09:00 ─────────────────────────────────────────\A 09:20     Paciente Demo A · Consulta                 Confirmado\A 10:00 ─────────────────────────────────────────\A 11:05     Paciente Demo B · pidió reprogramar        WhatsApp leído\A 12:00 ─────────────────────────────────────────\A 14:00     Paciente Demo C · Consulta                 Pendiente\A 15:00 ─────────────────────────────────────────";
-  background:
-    linear-gradient(#dce8df,#dce8df) 10% 39%/56% 10% no-repeat,
-    linear-gradient(#f3e3e7,#f3e3e7) 10% 58%/62% 10% no-repeat,
-    linear-gradient(#f6eee4,#f6eee4) 10% 77%/52% 10% no-repeat,
-    #fff;
-}
-.product-shot-patient::after{
-  content:"PACIENTES                                 Buscar paciente, turno…\A domingo, 4 de octubre\A\A Paciente Demo A\A Ficha del paciente · datos ficticios\A\A PD   Paciente Demo A      Próximo turno 07/10 · 10:30   Precio $18.000\A      37 años\A\A Resumen   Ficha clínica   Sesiones   Documentos   Recetas   Pagos\A ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\A\A FICHA CLÍNICA\A Motivo de consulta\A Seguimiento clínico periódico.\A\A DIAGNÓSTICO\A Trastorno de ansiedad generalizada                         F41.1\A\A Herramientas clínicas     Dictar nota   Crear receta   Generar documento";
-  background:
-    linear-gradient(#ede6f2,#ede6f2) 5% 29%/90% 12% no-repeat,
-    linear-gradient(#dce8df,#dce8df) 5% 67%/63% 18% no-repeat,
-    #fff;
-}
-.product-shot-automation::after{
-  content:"AGENDA                                    Buscar paciente, turno…\A domingo, 4 de octubre\A\A Comunicación del turno\A Paciente Demo A · mañana 10:30\A\A  1   Turno agendado                 WhatsApp inicial                     Enviado\A\A  2   Recordatorio 24 h              Confirmar · Cancelar · Reprogramar  Leído\A\A  3   Respuesta del paciente          Confirmó el turno                    Confirmado\A\A  4   Google Calendar                 Evento sincronizado                  Conectado\A\A La agenda se actualiza automáticamente cuando el paciente responde.";
-  background:
-    linear-gradient(#dce8df,#dce8df) 5% 32%/90% 11% no-repeat,
-    linear-gradient(#ede6f2,#ede6f2) 5% 48%/90% 11% no-repeat,
-    linear-gradient(#dce8df,#dce8df) 5% 64%/90% 11% no-repeat,
-    linear-gradient(#f6eee4,#f6eee4) 5% 80%/90% 11% no-repeat,
-    #fff;
-}
-.product-shot-payments::after{
-  content:"PAGOS Y CAJA                            Buscar paciente, turno…\A domingo, 4 de octubre\A\A Pagos y caja\A Registrá cobros de turnos y movimientos de caja.\A\A CAJA ACTUAL                         COBRADO\A $ 142.000                            $ 186.000\A                                     últimos 50 pagos\A\A Registrar pago                       Últimos movimientos de caja\A Turno   Paciente Demo A · $18.000    Mercado Pago · hoy       +$18.000\A Importe 18.000                        Transferencia · hoy       +$16.000\A Medio   Mercado Pago                  Insumo · ayer              −$6.500\A\A Registrar pago\A\A Facturación ARCA     Factura C 0003-00001245 · Emitida";
-  background:
-    linear-gradient(#dce8df,#dce8df) 5% 33%/35% 16% no-repeat,
-    linear-gradient(#ede6f2,#ede6f2) 43% 33%/28% 16% no-repeat,
-    linear-gradient(#f3e3e7,#f3e3e7) 5% 86%/90% 8% no-repeat,
-    #fff;
-}
-.product-shot-dashboard::before{box-shadow:inset 0 153px 0 #dce8df,0 10px 28px rgba(31,43,51,.07)}
-.product-shot-agenda::before{box-shadow:inset 0 238px 0 #fff, inset 0 284px 0 #dce8df,0 10px 28px rgba(31,43,51,.07)}
-.product-shot-patient::before{box-shadow:inset 0 276px 0 #fff, inset 0 322px 0 #dce8df,0 10px 28px rgba(31,43,51,.07)}
-.product-shot-payments::before{box-shadow:inset 0 404px 0 #fff, inset 0 450px 0 #dce8df,0 10px 28px rgba(31,43,51,.07)}
+.flow-steps-showcase{max-width:1080px;margin:34px auto 0}
 @media(max-width:760px){
-  .product-shot::before{font-size:5.2px;border-radius:10px}
-  .product-shot::after{font-size:clamp(5px,1.6vw,10px);line-height:1.55;border-radius:10px}
+  .flow-showcase-head{text-align:left;margin-bottom:18px}
+  .turnia-app-carousel{height:780px;border-radius:15px}
+  .flow-steps-showcase{grid-template-columns:repeat(4,1fr);row-gap:22px;margin-top:24px}
+  .flow-steps-showcase li:nth-child(4)::after{display:none}
+}
+@media(max-width:480px){
+  .turnia-app-carousel{height:735px}
+  .flow-steps-showcase{grid-template-columns:repeat(2,1fr)}
+  .flow-steps-showcase li:nth-child(2n)::after{display:none}
 }
