@@ -316,30 +316,15 @@
       </ol>
     </div>
 
-    <div class="flow-visual">
-      <div class="checklist">
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Turnos confirmados</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Pacientes organizados</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Pago recibido</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Factura emitida</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Más tiempo para vos</p>
-      </div>
-      <div class="tablet">
-        <div class="tablet-screen">
-          <div class="tb-head"><div class="app-brand"><img src="assets/img/turnia-isotipo-192.png" alt=""><span>Turn<b>IA</b></span></div><span class="tb-date">Resumen del día</span></div>
-          <div class="tb-kpis">
-            <div><i>Turnos</i><b>12</b></div><div><i>Confirmados</i><b>11</b></div><div><i>Cobrado</i><b>$ 186.000</b></div>
-          </div>
-          <div class="tb-chart"><span style="height:38%"></span><span style="height:55%"></span><span style="height:47%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:84%"></span><span style="height:76%"></span></div>
-          <div class="tb-rows">
-            <div><span class="dot g"></span>Factura C 0003-00001245<em>Emitida</em></div>
-            <div><span class="dot b"></span>Receta · Paciente de las 10:30<em>Enviada</em></div>
-            <div><span class="dot g"></span>Nota por voz transcripta<em>Lista</em></div>
-          </div>
+    <div class="flow-visual flow-video" aria-label="Demostración de TurnIA">
+      <div class="demo-video-shell">
+        <div class="demo-video-head">
+          <span class="demo-video-kicker">TurnIA en acción</span>
+          <span class="demo-video-duration">Demo · 57 s</span>
         </div>
+        <video id="turnia-demo-video" class="demo-video-player" controls playsinline preload="metadata" aria-label="Video demostración de TurnIA"></video>
+        <p class="demo-video-caption">Recorré TurnIA y mirá cómo se organiza el trabajo diario desde una sola plataforma.</p>
       </div>
-      <p class="handnote">Más tiempo<br>para lo importante.</p>
-      <svg class="handarrow" viewBox="0 0 90 60" aria-hidden="true"><path d="M85 8C70 42 40 55 8 44"/><path d="M16 36 7 44l11 5"/></svg>
     </div>
   </div>
 </section>
@@ -537,5 +522,27 @@
 
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script>
+(() => {
+  const video = document.getElementById('turnia-demo-video');
+  if (!video) return;
+  const chunks = Array.from({ length: 10 }, (_, i) =>
+    `assets/demo-video/chunk-${String(i).padStart(2, '0')}.txt`
+  );
+  Promise.all(chunks.map((url) => fetch(url).then((r) => {
+    if (!r.ok) throw new Error('No se pudo cargar el video');
+    return r.text();
+  })))
+    .then((parts) => {
+      video.src = 'data:video/mp4;base64,' + parts.join('');
+      video.load();
+    })
+    .catch(() => {
+      const caption = document.querySelector('.demo-video-caption');
+      if (caption) caption.textContent = 'La demo no pudo cargarse. Volvé a intentar en unos segundos.';
+    });
+})();
+</script>
 </body>
 </html>
