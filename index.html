@@ -299,48 +299,65 @@
 
 <!-- ======================= FLUJO ======================= -->
 <section class="section flow" id="como-funciona">
-  <div class="container flow-grid">
-    <div class="flow-copy">
+  <div class="container">
+    <div class="flow-heading">
       <p class="kicker">Tu jornada, de principio a fin</p>
       <h2 class="h2">Así fluye tu día con TurnIA</h2>
-      <p class="lead">Un proceso completo, automatizado y sin fricciones.</p>
-      <ol class="flow-steps">
-        <li><span class="n">1</span><span class="f-ico"><svg class="ico"><use href="#i-calendar"/></svg></span><b>Turno<br>agendado</b></li>
-        <li><span class="n">2</span><span class="f-ico"><svg class="ico"><use href="#i-bell"/></svg></span><b>Recordatorio<br>automático</b></li>
-        <li><span class="n">3</span><span class="f-ico"><img src="assets/logos/whatsapp.svg" alt=""></span><b>Confirmar o<br>reprogramar</b></li>
-        <li><span class="n">4</span><span class="f-ico"><svg class="ico"><use href="#i-steth"/></svg></span><b>Atención<br><small>presencial o Meet</small></b></li>
-        <li><span class="n">5</span><span class="f-ico"><svg class="ico"><use href="#i-sign"/></svg></span><b>Receta<br>y firma<small>MisRx · Digilogix</small></b></li>
-        <li><span class="n">6</span><span class="f-ico"><img src="assets/logos/mercadopago.svg" alt="" class="f-mp"></span><b>Cobro</b></li>
-        <li><span class="n">7</span><span class="f-ico f-ico-arca"><img src="assets/logos/arca.png" alt=""></span><b>Factura<br>ARCA</b></li>
-        <li><span class="n">8</span><span class="f-ico"><svg class="ico"><use href="#i-chart"/></svg></span><b>Seguimiento<br>y métricas</b></li>
-      </ol>
+      <p class="lead">Conocé el ecosistema desde adentro: una práctica organizada, conectada y simple.</p>
     </div>
 
-    <div class="flow-visual">
-      <div class="checklist">
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Turnos confirmados</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Pacientes organizados</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Pago recibido</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Factura emitida</p>
-        <p><svg class="ico"><use href="#i-check-circle"/></svg>Más tiempo para vos</p>
-      </div>
-      <div class="tablet">
-        <div class="tablet-screen">
-          <div class="tb-head"><div class="app-brand"><img src="assets/img/turnia-isotipo-192.png" alt=""><span>Turn<b>IA</b></span></div><span class="tb-date">Resumen del día</span></div>
-          <div class="tb-kpis">
-            <div><i>Turnos</i><b>12</b></div><div><i>Confirmados</i><b>11</b></div><div><i>Cobrado</i><b>$ 186.000</b></div>
-          </div>
-          <div class="tb-chart"><span style="height:38%"></span><span style="height:55%"></span><span style="height:47%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:84%"></span><span style="height:76%"></span></div>
-          <div class="tb-rows">
-            <div><span class="dot g"></span>Factura C 0003-00001245<em>Emitida</em></div>
-            <div><span class="dot b"></span>Receta · Paciente de las 10:30<em>Enviada</em></div>
-            <div><span class="dot g"></span>Nota por voz transcripta<em>Lista</em></div>
-          </div>
+    <div class="product-carousel" data-product-carousel aria-roledescription="carrusel" aria-label="Cómo funciona TurnIA">
+      <div class="product-carousel-viewport">
+        <div class="product-carousel-track" data-carousel-track>
+          <figure class="product-slide is-active" data-carousel-slide aria-hidden="false">
+            <img src="assets/img/how-it-works/dashboard.webp" alt="Dashboard de TurnIA con turnos, cobros y pendientes del día" width="1280" height="720" loading="eager">
+            <figcaption>Dashboard: tu día, en una sola vista.</figcaption>
+          </figure>
+          <figure class="product-slide" data-carousel-slide aria-hidden="true">
+            <img src="assets/img/how-it-works/agenda.webp" alt="Agenda de TurnIA con turnos y estados de confirmación" width="1280" height="720" loading="lazy">
+            <figcaption>Agenda: turnos y estados siempre claros.</figcaption>
+          </figure>
+          <figure class="product-slide" data-carousel-slide aria-hidden="true">
+            <img src="assets/img/how-it-works/ficha-clinica.webp" alt="Ficha clínica de un paciente demo en TurnIA" width="1280" height="720" loading="lazy">
+            <figcaption>Ficha clínica: toda la información del paciente integrada.</figcaption>
+          </figure>
+          <figure class="product-slide" data-carousel-slide aria-hidden="true">
+            <img src="assets/img/how-it-works/automatizaciones.webp" alt="Automatizaciones de comunicación de TurnIA para un turno" width="1280" height="720" loading="lazy">
+            <figcaption>Automatizaciones: TurnIA acompaña el circuito por vos.</figcaption>
+          </figure>
+          <figure class="product-slide" data-carousel-slide aria-hidden="true">
+            <img src="assets/img/how-it-works/cobros-facturacion.webp" alt="Pagos, caja y facturación de TurnIA" width="1280" height="720" loading="lazy">
+            <figcaption>Cobros y facturación: todo dentro del mismo flujo.</figcaption>
+          </figure>
         </div>
       </div>
-      <p class="handnote">Más tiempo<br>para lo importante.</p>
-      <svg class="handarrow" viewBox="0 0 90 60" aria-hidden="true"><path d="M85 8C70 42 40 55 8 44"/><path d="M16 36 7 44l11 5"/></svg>
+
+      <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Pantalla anterior">
+        <svg class="ico" aria-hidden="true"><use href="#i-chevron-left"/></svg>
+      </button>
+      <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Pantalla siguiente">
+        <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      </button>
+
+      <div class="carousel-dots" role="group" aria-label="Elegir pantalla">
+        <button type="button" class="is-active" data-carousel-dot="0" aria-label="Ver Dashboard" aria-current="true"></button>
+        <button type="button" data-carousel-dot="1" aria-label="Ver Agenda"></button>
+        <button type="button" data-carousel-dot="2" aria-label="Ver Ficha clínica"></button>
+        <button type="button" data-carousel-dot="3" aria-label="Ver Automatizaciones"></button>
+        <button type="button" data-carousel-dot="4" aria-label="Ver Cobros y facturación"></button>
+      </div>
     </div>
+
+    <ol class="flow-steps flow-steps-under-carousel">
+      <li><span class="n">1</span><span class="f-ico"><svg class="ico"><use href="#i-calendar"/></svg></span><b>Turno<br>agendado</b></li>
+      <li><span class="n">2</span><span class="f-ico"><svg class="ico"><use href="#i-bell"/></svg></span><b>Recordatorio<br>automático</b></li>
+      <li><span class="n">3</span><span class="f-ico"><img src="assets/logos/whatsapp.svg" alt=""></span><b>Confirmar o<br>reprogramar</b></li>
+      <li><span class="n">4</span><span class="f-ico"><svg class="ico"><use href="#i-steth"/></svg></span><b>Atención<br><small>presencial o Meet</small></b></li>
+      <li><span class="n">5</span><span class="f-ico"><svg class="ico"><use href="#i-sign"/></svg></span><b>Receta<br>y firma<small>MisRx · Digilogix</small></b></li>
+      <li><span class="n">6</span><span class="f-ico"><img src="assets/logos/mercadopago.svg" alt="" class="f-mp"></span><b>Cobro</b></li>
+      <li><span class="n">7</span><span class="f-ico f-ico-arca"><img src="assets/logos/arca.png" alt=""></span><b>Factura<br>ARCA</b></li>
+      <li><span class="n">8</span><span class="f-ico"><svg class="ico"><use href="#i-chart"/></svg></span><b>Seguimiento<br>y métricas</b></li>
+    </ol>
   </div>
 </section>
 
