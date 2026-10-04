@@ -36,6 +36,6 @@ window.TURNIA_CONFIG = {
   trialSignupUrl: "https://app.turniahealth.com.ar/api/public/trial-signup",
   commercialRequestUrl: "https://app.turniahealth.com.ar/api/public/commercial-request",
 
-  // Link de suscripción de Mercado Pago (se usa al terminar la prueba, desde la app o el email).
+  // La suscripción posterior a la prueba se gestiona desde la aplicación.
   mercadoPagoCheckoutUrl: ""
 };
