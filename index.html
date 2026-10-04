@@ -322,7 +322,7 @@
           <span class="demo-video-kicker">TurnIA en acción</span>
           <span class="demo-video-duration">Demo · 57 s</span>
         </div>
-        <video id="turnia-demo-video" class="demo-video-player" controls playsinline preload="metadata" aria-label="Video demostración de TurnIA"><source src="assets/demo-video/turnia-demo-preview.mp4" type="video/mp4"></video>
+        <video id="turnia-demo-video" class="demo-video-player" controls playsinline preload="metadata" aria-label="Video demostración de TurnIA"></video>
         <p class="demo-video-caption">Recorré TurnIA y mirá cómo se organiza el trabajo diario desde una sola plataforma.</p>
       </div>
     </div>
@@ -523,5 +523,44 @@
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
 
+
+<script id="turnia-demo-loader">
+(() => {
+  const video = document.getElementById('turnia-demo-video');
+  const caption = document.querySelector('.demo-video-caption');
+  if (!video) return;
+
+  const chunkUrls = Array.from({ length: 9 }, (_, i) =>
+    `assets/demo-video/hq/hq-${String(i).padStart(2, '0')}.txt`
+  );
+
+  if (caption) caption.textContent = 'Cargando demo en alta calidad…';
+
+  Promise.all(chunkUrls.map(async (url) => {
+    const response = await fetch(url, { cache: 'force-cache' });
+    if (!response.ok) throw new Error(`Error cargando ${url}`);
+    return (await response.text()).trim();
+  }))
+    .then((parts) => {
+      const base64 = parts.join('');
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+
+      const blob = new Blob([bytes], { type: 'video/mp4' });
+      const objectUrl = URL.createObjectURL(blob);
+      video.src = objectUrl;
+      video.load();
+
+      video.addEventListener('loadedmetadata', () => {
+        if (caption) caption.textContent = 'Recorré TurnIA y mirá cómo se organiza el trabajo diario desde una sola plataforma.';
+      }, { once: true });
+    })
+    .catch((error) => {
+      console.error(error);
+      if (caption) caption.textContent = 'No se pudo cargar la demo. Actualizá la página para volver a intentar.';
+    });
+})();
+</script>
 </body>
 </html>
