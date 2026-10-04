@@ -656,7 +656,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* ===== Launch hardening: marca oficial + gestiones comerciales ===== */
 .brand-official { display:inline-flex; align-items:center; min-width:0; flex:0 0 auto; }
-.brand-header-mark { display:block; width:52px; height:52px; object-fit:contain; flex:0 0 auto; }
+.brand-header-mark { display:block; width:58px; height:58px; object-fit:contain; object-position:center 55%; flex:0 0 auto; transform:translateY(2px); }
 .brand-logo-full { display:block; width:146px; max-width:42vw; height:auto; object-fit:contain; }
 .site-footer .brand-logo-full { width:150px; }
 .legal-header .brand-logo-full { width:142px; }
@@ -692,7 +692,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .request-result-error { background:rgba(166,40,40,.10); }
 
 @media (max-width:760px) {
-  .brand-header-mark { width:46px; height:46px; }
+  .brand-header-mark { width:50px; height:50px; transform:translateY(1px); }
   .brand-logo-full { width:128px; max-width:48vw; }
   .request-form { padding:18px; }
   .footer-bottom .legal-actions { width:100%; }
