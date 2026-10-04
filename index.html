@@ -527,8 +527,8 @@
 (() => {
   const video = document.getElementById('turnia-demo-video');
   if (!video) return;
-  const chunks = Array.from({ length: 10 }, (_, i) =>
-    `assets/demo-video/chunk-${String(i).padStart(2, '0')}.txt`
+  const chunks = Array.from({ length: 5 }, (_, i) =>
+    `assets/demo-video/preview-${String(i).padStart(2, '0')}.txt`
   );
   Promise.all(chunks.map((url) => fetch(url).then((r) => {
     if (!r.ok) throw new Error('No se pudo cargar el video');
