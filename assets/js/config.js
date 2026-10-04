@@ -15,13 +15,13 @@ window.TURNIA_CONFIG = {
 
   // Plan
   planName: "TurnIA Profesional",
-  planPrice: "$29.900",
+  planPrice: "$39.900",
   planPriceSuffix: "/ mes, impuestos incluidos",
   trialDays: 14,
-  monthlyPrice: 29900,
+  monthlyPrice: 39900,
   // Formas de pago (impuestos incluidos). 6 meses: se pagan 5. 12 meses: se pagan 9.
   billing: {
-    mensual: { months: 1, total: 29900, per: "/ mes" }
+    mensual: { months: 1, total: 39900, per: "/ mes" }
   },
   termsVersion: "2026-10-02",
   privacyVersion: "2026-09-26",
