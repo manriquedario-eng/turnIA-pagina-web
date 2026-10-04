@@ -387,6 +387,37 @@ ul,ol{margin:0;padding:0;list-style:none}
 .fcb-trust p{display:flex;gap:10px;align-items:center;font-size:12.5px;line-height:1.35;color:#DDF1EC}
 .fcb-trust .ico{width:24px;height:24px;color:#9FE0CF}
 
+
+/* =================== VIDEO DEMO + CONTACTO =================== */
+.flow-video-card{
+  min-width:0;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:16px;
+  box-shadow:var(--shadow-md);
+}
+.flow-video-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.flow-video-kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--teal-700)}
+.flow-video-kicker .ico{width:18px;height:18px}
+.flow-video-duration{font-size:12px;color:var(--soft)}
+.flow-video-frame{overflow:hidden;border-radius:16px;background:#07191d;aspect-ratio:4/3}
+.flow-video{display:block;width:100%;height:100%;object-fit:contain;background:#07191d}
+.flow-video-copy{margin:12px 2px 0;font-size:13px;line-height:1.5;color:var(--muted)}
+.contact-modal-card{max-width:620px}
+.contact-modal-card h3{font-size:24px;color:var(--navy);letter-spacing:-.02em;margin:2px 0 0}
+.contact-form{display:grid;gap:14px}
+.contact-message{display:grid;gap:6px;font-size:13px;font-weight:500;color:var(--navy)}
+.contact-message textarea{
+  width:100%;resize:vertical;min-height:120px;font:inherit;font-size:14px;
+  border:1px solid var(--input-line);border-radius:10px;padding:11px 12px;
+  color:var(--ink);background:var(--surface)
+}
+.contact-message textarea:focus{outline:none;border-color:var(--teal-500);box-shadow:0 0 0 3px rgba(16,149,125,.15)}
+.request-result{font-size:13px;line-height:1.45;border-radius:10px;padding:10px 12px}
+.request-result-ok{background:var(--mint-25);color:var(--teal-800);border:1px solid var(--mint-100)}
+.request-result-error{background:var(--red-50);color:#C62F35;border:1px solid var(--red-100)}
+
 /* =================== FOOTER =================== */
 .site-footer{padding:18px 0 22px;border-top:1px solid var(--line-2)}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1.4fr 1.8fr;gap:28px}
