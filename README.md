@@ -13,12 +13,12 @@ Sitio estático HTML + CSS + JavaScript, desplegado en Vercel.
 El lanzamiento comercial inicial usa:
 
 - plan único TurnIA Profesional;
-- ARS 29.900 por mes, impuestos incluidos;
+- ARS 39.900 por mes, impuestos incluidos;
 - 14 días de prueba gratis sin tarjeta;
 - alta comercial conectada a `/api/public/trial-signup`;
 - confirmación de email antes de activar la prueba;
 - suscripción mensual posterior mediante Mercado Pago;
-- email de acceso a TurnIA separado del email pagador de Mercado Pago;
+- Mercado Pago se solicita únicamente al continuar con una suscripción después de la prueba;
 - contacto comercial por WhatsApp, email y formulario de ventas;
 - gestiones públicas de arrepentimiento y baja con número de solicitud.
 
@@ -49,11 +49,11 @@ El alta y las gestiones comerciales se procesan server-side en la aplicación Tu
 ## Reglas comerciales vigentes
 
 - Un único plan mensual.
-- Precio final: $29.900/mes, impuestos incluidos.
+- Precio final: $39.900/mes, impuestos incluidos.
 - 14 días de prueba gratis sin tarjeta.
 - Mercado Pago SaaS es un circuito separado de los cobros que cada profesional hace a sus pacientes.
 - MisRx figura como integración disponible.
-- Digilogix figura como integración disponible; el certificado digital es personal y se gestiona/abona directamente con Digilogix.
+- La firma digital figura como función próxima; no se comunica un proveedor definitivo hasta que la integración esté habilitada.
 - Sin testimonios inventados.
 - Las pantallas de la landing son mockups comerciales con datos ficticios.
 
