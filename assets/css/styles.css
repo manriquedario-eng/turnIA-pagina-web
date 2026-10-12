@@ -567,6 +567,11 @@ ul,ol{margin:0;padding:0;list-style:none}
 .legal p+p{margin-top:12px}
 .legal ul{list-style:disc;padding-left:22px;margin:10px 0;display:grid;gap:6px}
 .legal a{color:var(--teal-700);text-decoration:underline;text-underline-offset:2px}
+/* Los botones dentro de páginas de contenido conservan su estilo de botón. */
+.legal a.btn{text-decoration:none}
+.legal a.btn-primary{color:#fff}
+.legal a.btn-outline{color:var(--navy)}
+.legal a.btn-outline:hover{color:var(--teal-700)}
 .legal strong{color:var(--navy);font-weight:600}
 .legal mark{background:#FFF1B8;color:#5A4300;padding:0 4px;border-radius:4px}
 .legal-toc{margin:28px 0 8px;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:var(--mint-25)}
