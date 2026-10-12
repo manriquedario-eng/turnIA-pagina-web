@@ -19,7 +19,7 @@ window.TURNIA_CONFIG = {
   planPriceSuffix: "/ mes, impuestos incluidos",
   trialDays: 14,
   monthlyPrice: 39900,
-  // Formas de pago (impuestos incluidos). 6 meses: se pagan 5. 12 meses: se pagan 9.
+  // Única forma de pago vigente: mensual, impuestos incluidos.
   billing: {
     mensual: { months: 1, total: 39900, per: "/ mes" }
   },

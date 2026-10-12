@@ -722,3 +722,37 @@ ul,ol{margin:0;padding:0;list-style:none}
   .legal-quick-buttons { width:100%; justify-content:flex-start; }
   .legal-quick-buttons .btn { width:100%; text-align:center; }
 }
+
+/* ===== Pacientes, historia clínica y app en el celular ===== */
+.btn[hidden]{display:none}
+.patients-side,.clinical{padding-top:22px}
+.patients-side .lead{margin-bottom:4px}
+.app-install{padding-top:22px}
+.ai-band{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;background:linear-gradient(180deg,var(--mint-25) 0%,var(--surface) 100%);border:1px solid var(--line);border-radius:var(--radius);padding:32px 36px;box-shadow:var(--shadow-sm)}
+.ai-steps{display:grid;gap:12px;margin:20px 0 22px;counter-reset:none}
+.ai-steps li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink);line-height:1.5}
+.ai-steps .n{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--teal-700);color:#fff;font-size:13px;font-weight:700}
+.ai-steps b{color:var(--navy)}
+.ai-qr{margin:0;text-align:center;max-width:220px}
+.ai-qr img{width:180px;height:180px;margin:0 auto;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff;padding:6px}
+.ai-qr figcaption{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.4}
+.co-next{list-style:decimal;padding-left:20px;margin:10px 0;display:grid;gap:8px;color:var(--ink)}
+.co-next li{font-size:13.5px;line-height:1.5}
+.co-next b{color:var(--navy)}
+.co-done a{color:var(--teal-700);text-decoration:underline}
+.co-qr{display:flex;gap:14px;align-items:center;margin:12px 0 4px;padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.co-qr img{width:112px;height:112px;flex:none;border-radius:8px;background:#fff}
+.co-qr p{font-size:12.5px;color:var(--muted);line-height:1.45}
+.co-done-note{font-size:12.5px;color:var(--muted);margin-top:8px}
+.install-steps{list-style:none!important;padding-left:0!important;counter-reset:step;display:grid;gap:12px!important;margin:16px 0!important}
+.install-steps li{counter-increment:step;position:relative;padding:12px 14px 12px 52px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.install-steps li::before{content:counter(step);position:absolute;left:14px;top:12px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--teal-700);color:#fff;font-size:13px;font-weight:700}
+.install-qr{display:flex;gap:20px;align-items:center;margin:20px 0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--mint-25)}
+.install-qr img{width:150px;height:150px;flex:none;border-radius:10px;background:#fff;padding:4px}
+.install-device-hint{display:none}
+.install-device-hint:not([hidden]){display:block}
+@media (hover:none) and (pointer:coarse){.ai-qr,.co-qr,.install-qr{display:none}}
+@media (max-width:1024px){.ai-band{grid-template-columns:1fr}.ai-qr{margin:0 auto}}
+@media (max-width:760px){.ai-band{padding:22px 18px}.ai-steps li{font-size:14px}.co-qr{display:none}.install-qr{flex-direction:column;text-align:center}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ai-steps .n,:root:not([data-theme="light"]) .install-steps li::before{color:#062520}}
+:root[data-theme="dark"] .ai-steps .n,:root[data-theme="dark"] .install-steps li::before{color:#062520}

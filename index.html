@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TurnIA Health — Software para profesionales de la salud en Argentina</title>
-<meta name="description" content="TurnIA Health reúne agenda, pacientes, cobros, facturación ARCA, recetas, automatizaciones y métricas en una sola plataforma para profesionales de la salud en Argentina.">
+<meta name="description" content="TurnIA Health reúne agenda, pacientes, historia clínica, cobros, facturación ARCA, recetas, automatizaciones y métricas en una sola plataforma para profesionales de la salud en Argentina. Usala desde la computadora o instalala en tu celular.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="https://www.turniahealth.com.ar/">
 <link rel="alternate" hreflang="es-AR" href="https://www.turniahealth.com.ar/">
@@ -46,8 +46,8 @@
       "alternateName": "TurnIA",
       "url": "https://www.turniahealth.com.ar/",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "description": "Plataforma de gestión para profesionales de la salud en Argentina con agenda, pacientes, cobros, facturación ARCA, recetas, automatizaciones y métricas.",
+      "operatingSystem": "Web, Android, iOS",
+      "description": "Plataforma de gestión para profesionales de la salud en Argentina con agenda, pacientes, historia clínica, cobros, facturación ARCA, recetas, automatizaciones y métricas. Funciona en el navegador y se instala en el celular con notificaciones.",
       "publisher": {
         "@id": "https://www.turniahealth.com.ar/#organization"
       },
@@ -151,7 +151,7 @@
       </div>
       <p class="hero-note">14 días gratis · Sin tarjeta de crédito</p>
       <ul class="hero-trust">
-        <li><svg class="ico"><use href="#i-cloud"/></svg><span>Sin instalaciones</span></li>
+        <li><svg class="ico"><use href="#i-bell"/></svg><span>Se instala en tu celular, con avisos</span></li>
         <li><svg class="ico"><use href="#i-devices"/></svg><span>Computadora, tablet y celular</span></li>
         <li><svg class="ico"><use href="#i-shield"/></svg><span>Pago seguro con Mercado&nbsp;Pago</span></li>
         <li><svg class="ico"><use href="#i-steth"/></svg><span>Pensado para profesionales de la salud en Argentina</span></li>
@@ -162,7 +162,7 @@
       <div class="hv">
         <!-- tarjetas flotantes -->
         <div class="float-card fc-arca"><img src="assets/logos/arca.png" alt="ARCA" class="fc-logo"><div><b>ARCA integrada</b><span>Facturación electrónica</span></div></div>
-        <div class="float-card fc-firma"><span class="fc-ico ic-green"><svg class="ico"><use href="#i-pen"/></svg></span><div><b>Firma digital</b><span>Integración en preparación</span></div></div>
+        <div class="float-card fc-firma"><span class="fc-ico ic-green"><svg class="ico"><use href="#i-pen"/></svg></span><div><b>Firma digital</b><span>Integrada con DigiLogix</span></div></div>
         <div class="float-card fc-receta"><span class="fc-ico ic-blue"><svg class="ico"><use href="#i-rx"/></svg></span><div><b>Receta electrónica</b><span>Integrada con MisRx</span></div></div>
         <div class="float-card fc-voz"><img src="assets/logos/openai.svg" alt="OpenAI" class="fc-logo fc-logo-sm logo-openai"><div><b>Notas por voz</b><span>Transcripción con IA</span></div></div>
         <div class="float-card fc-wa"><img src="assets/logos/whatsapp.svg" alt="WhatsApp" class="fc-logo fc-logo-sm"><div><b>WhatsApp automático</b><span>Recordatorios y confirmaciones</span></div></div>
@@ -260,7 +260,7 @@
             <li><span class="p-ico"><svg class="ico"><use href="#i-calendar"/></svg></span>Agenda</li>
             <li><span class="p-ico"><svg class="ico"><use href="#i-doc"/></svg></span>Documentos e informes</li>
             <li><span class="p-ico"><svg class="ico"><use href="#i-users"/></svg></span>Pacientes</li>
-            <li><span class="p-ico"><svg class="ico"><use href="#i-pen"/></svg></span>Firma digital · próximamente</li>
+            <li><span class="p-ico"><svg class="ico"><use href="#i-pen"/></svg></span>Firma digital · DigiLogix</li>
             <li><img src="assets/logos/mercadopago.svg" alt="" class="p-logo">Cobros</li>
             <li><span class="p-ico"><svg class="ico"><use href="#i-rx"/></svg></span>Receta electrónica · MisRx</li>
             <li><img src="assets/logos/arca.png" alt="" class="p-logo">Facturación ARCA</li>
@@ -286,8 +286,8 @@
       <article class="diff-card">
         <span class="diff-ico"><svg class="ico"><use href="#i-pen"/></svg></span>
         <h3>Firma digital</h3>
-        <p>Integración de firma digital en preparación. La disponibilidad y el proveedor se informarán cuando esté habilitada.</p>
-        <span class="diff-badge">Próximamente</span>
+        <p>Firmá digitalmente informes y documentos clínicos con tu certificado, sin salir de TurnIA.</p>
+        <span class="diff-badge diff-badge-logo">con <img src="assets/logos/digilogix.png" alt="DigiLogix" class="logo-digilogix"></span>
       </article>
       <article class="diff-card">
         <span class="diff-ico"><svg class="ico"><use href="#i-rx"/></svg></span>
@@ -328,7 +328,40 @@
       <div class="auto-card"><span class="a-ico a-ico-blue"><svg class="ico"><use href="#i-mail"/></svg></span><div><h3>Recordatorios por email</h3><p>Menos ausencias con avisos automáticos.</p></div></div>
       <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-chart"/></svg></span><div><h3>Métricas y reportes</h3><p>Seguí turnos, ingresos y la evolución de tu práctica.</p></div></div>
       <div class="auto-card"><span class="a-logos"><img src="assets/logos/google-calendar.svg" alt="Google Calendar"><img src="assets/logos/google-meet.svg" alt="Google Meet"></span><div><h3>Google Calendar / Meet</h3><p>Sincronización de agenda y videoconsultas.</p></div></div>
-      <div class="auto-card"><span class="a-ico a-ico-blue"><svg class="ico"><use href="#i-bell"/></svg></span><div><h3>Notificaciones</h3><p>Enterate de cada novedad sin estar pendiente.</p></div></div>
+      <div class="auto-card"><span class="a-ico a-ico-blue"><svg class="ico"><use href="#i-bell"/></svg></span><div><h3>Notificaciones en el celular</h3><p>Te avisa al instante cuando un paciente confirma, cancela o pide reprogramar.</p></div></div>
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-refresh"/></svg></span><div><h3>Turnos recurrentes y bloqueos</h3><p>Cargá series semanales, quincenales o mensuales y bloqueá horarios, vacaciones o feriados.</p></div></div>
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-clock"/></svg></span><div><h3>Lista de espera</h3><p>Anotá a quien busca turno y ocupá rápido los huecos que se liberan.</p></div></div>
+      <div class="auto-card"><span class="a-ico a-ico-blue"><svg class="ico"><use href="#i-invoice"/></svg></span><div><h3>Factura por email</h3><p>La factura ARCA le llega a tu paciente por correo, con su PDF.</p></div></div>
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-folder"/></svg></span><div><h3>Exportá tus datos</h3><p>Agenda, pacientes, cobros y fichas en PDF, Word o Excel cuando lo necesites.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PACIENTES ======================= -->
+<section class="section autos patients-side" id="pacientes">
+  <div class="container">
+    <p class="kicker">Tus pacientes también lo notan</p>
+    <h2 class="h2">Menos llamados, menos ausencias</h2>
+    <p class="lead">Tus pacientes resuelven todo desde el celular, sin instalar nada.</p>
+    <div class="auto-grid">
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-check-circle"/></svg></span><div><h3>Confirman en un toque</h3><p>Reciben un link para confirmar, cancelar o pedir reprogramar su turno, sin llamarte.</p></div></div>
+      <div class="auto-card"><img src="assets/logos/whatsapp.svg" alt="WhatsApp" class="a-logo"><div><h3>Recordatorio 24 h antes</h3><p>Por WhatsApp y email, automático. Vos no tenés que mandar nada.</p></div></div>
+      <div class="auto-card"><img src="assets/logos/mercadopago.svg" alt="Mercado Pago" class="a-logo a-logo-mp"><div><h3>Pagan el turno online</h3><p>Link de pago con Mercado Pago, acreditado en tu propia cuenta.</p></div></div>
+      <div class="auto-card"><span class="a-ico a-ico-blue"><svg class="ico"><use href="#i-sign"/></svg></span><div><h3>Consentimiento desde el celular</h3><p>El paciente firma el consentimiento informado con un código de verificación y queda registrado en su historia.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= HISTORIA CLÍNICA Y SEGURIDAD ======================= -->
+<section class="section autos clinical" id="historia-clinica">
+  <div class="container">
+    <p class="kicker">Historia clínica y seguridad</p>
+    <h2 class="h2">La información de tus pacientes, ordenada y protegida</h2>
+    <div class="auto-grid">
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-doc"/></svg></span><div><h3>Historia clínica completa</h3><p>Evoluciones en orden cronológico, diagnóstico CIE-10, documentos e informes en la ficha del paciente.</p></div></div>
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-mic"/></svg></span><div><h3>Evoluciones más rápidas</h3><p>Dictá por voz: la transcripción con IA queda lista para revisar y guardar en la evolución.</p></div></div>
+      <div class="auto-card"><span class="a-ico a-ico-blue"><svg class="ico"><use href="#i-lock"/></svg></span><div><h3>Acceso protegido</h3><p>Cada cuenta ve solo sus datos, los accesos a la historia clínica quedan registrados y la sesión se cierra por inactividad.</p></div></div>
+      <div class="auto-card"><span class="a-ico"><svg class="ico"><use href="#i-shield"/></svg></span><div><h3>Tus datos son tuyos</h3><p>Copias de seguridad, exportación completa y copia de la historia clínica cuando un paciente la solicita.</p></div></div>
     </div>
   </div>
 </section>
@@ -380,6 +413,29 @@
   </div>
 </section>
 
+<!-- ======================= APP EN EL CELULAR ======================= -->
+<section class="section app-install" id="app">
+  <div class="container">
+    <div class="ai-band">
+      <div class="ai-copy">
+        <p class="kicker">TurnIA en tu celular</p>
+        <h2 class="h2">Como una app, sin pasar por la tienda</h2>
+        <p class="lead">Agregá TurnIA a la pantalla de inicio en menos de un minuto y activá las notificaciones para enterarte de cada confirmación, cancelación o reprogramación.</p>
+        <ol class="ai-steps">
+          <li><span class="n">1</span><span>Abrí TurnIA en el celular e ingresá con tu cuenta.</span></li>
+          <li><span class="n">2</span><span>Agregala a la pantalla de inicio: en iPhone desde <b>Compartir</b>, en Android desde el menú <b>⋮</b>.</span></li>
+          <li><span class="n">3</span><span>Abrila desde el ícono y tocá <b>Activar</b> en el aviso de notificaciones.</span></li>
+        </ol>
+        <a class="btn btn-outline" href="instalar.html">Ver la guía paso a paso <svg class="ico"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <figure class="ai-qr">
+        <img src="assets/img/qr-app-turnia.svg" alt="Código QR para abrir TurnIA en el celular" width="180" height="180">
+        <figcaption>Escaneá con la cámara del celular para abrir TurnIA</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ======================= PRECIO + INSTITUCIONES ======================= -->
 <section class="section pricing" id="precios">
   <div class="container">
@@ -407,13 +463,17 @@
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Cobros con Mercado Pago</li>
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Facturación ARCA</li>
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Receta electrónica (MisRx)</li>
-            <li><svg class="ico"><use href="#i-clock"/></svg>Firma digital — próximamente*</li>
+            <li><svg class="ico"><use href="#i-check-circle"/></svg>Firma digital (DigiLogix)</li>
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Reintegros</li>
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Notas por voz + IA: 30 minutos en la prueba gratuita y 300 minutos por mensualidad pagada (no acumulables)</li>
+            <li><svg class="ico"><use href="#i-check-circle"/></svg>Historia clínica y CIE-10</li>
+            <li><svg class="ico"><use href="#i-check-circle"/></svg>Consentimiento informado electrónico</li>
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Documentos clínicos</li>
+            <li><svg class="ico"><use href="#i-check-circle"/></svg>Turnos recurrentes y lista de espera</li>
+            <li><svg class="ico"><use href="#i-check-circle"/></svg>App para el celular con notificaciones</li>
+            <li><svg class="ico"><use href="#i-check-circle"/></svg>Exportación en PDF, Word y Excel</li>
             <li><svg class="ico"><use href="#i-check-circle"/></svg>Métricas y seguimiento</li>
           </ul>
-          <p class="pc-foot">* La integración de firma digital está en preparación. Su disponibilidad y condiciones se informarán cuando esté habilitada.</p>
         </div>
       </div>
       <aside class="team-card">
@@ -433,18 +493,20 @@
     <h2 class="h2">Respondemos las dudas más comunes</h2>
     <div class="faq-grid">
       <div class="faq-col">
-        <details><summary>¿Tengo que instalar algo?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>No. TurnIA funciona desde el navegador: ingresás con tu usuario y empezás a trabajar, sin descargas ni instalaciones.</p></details>
+        <details><summary>¿Tengo que instalar algo?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>No hace falta descargar nada de una tienda. TurnIA funciona desde el navegador y, si querés, la agregás a la pantalla de inicio de tu celular para usarla como una app. <a href="instalar.html">Te mostramos cómo</a>.</p></details>
+        <details><summary>¿Recibo avisos en el celular?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. Con TurnIA instalada en tu celular y las notificaciones activadas, te avisa cuando un paciente confirma, cancela o pide reprogramar, y te recuerda tus próximos turnos. En iPhone, primero hay que agregarla a la pantalla de inicio. <a href="instalar.html">Ver la guía</a>.</p></details>
         <details><summary>¿Puedo usar TurnIA desde el celular?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. Podés consultar tu agenda, tus pacientes y tu día desde el celular o la tablet, con una interfaz adaptada a pantallas chicas.</p></details>
         <details><summary>¿Puedo usarlo desde computadora?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. Desde cualquier computadora o notebook con navegador. Trabajás con la misma cuenta en todos tus dispositivos.</p></details>
-        <details><summary>¿Mis pacientes tienen que instalar TurnIA?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>No. Tus pacientes reciben recordatorios y confirmaciones por WhatsApp y email, sin instalar nada.</p></details>
+        <details><summary>¿Mis pacientes tienen que instalar TurnIA?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>No. Tus pacientes reciben recordatorios por WhatsApp y email, y desde un link pueden confirmar, cancelar o pedir reprogramar su turno, sin instalar nada.</p></details>
         <details><summary>¿Cómo funciona Mercado Pago?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>La suscripción a TurnIA se paga mediante Mercado Pago, al terminar los 14 días de prueba. Además, podés cobrar turnos a tus pacientes con Mercado Pago desde la plataforma. Las cancelaciones o ausencias de un paciente con turno pago no generan devoluciones automáticas.</p></details>
       </div>
       <div class="faq-col">
         <details><summary>¿Cómo funciona la prueba gratis?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Tenés 14 días para usar TurnIA sin cargar tarjeta de crédito. Al terminar, si querés seguir, te suscribís con Mercado Pago por $39.900 por mes, impuestos incluidos. Si no te suscribís, no se te cobra nada.</p></details>
         <details><summary>¿Puedo facturar desde TurnIA?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. TurnIA tiene facturación electrónica ARCA integrada, para que emitas tus comprobantes sin salir del sistema. Necesitás tener tu situación fiscal en ARCA habilitada para facturar electrónicamente.</p></details>
-        <details><summary>¿TurnIA incluye firma digital?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>La integración de firma digital está en preparación y todavía no forma parte de las funciones productivas disponibles. Cuando esté habilitada, informaremos el procedimiento y las condiciones correspondientes.</p></details>
+        <details><summary>¿TurnIA incluye firma digital?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. TurnIA está integrada con DigiLogix: vinculás tu certificado de firma digital desde la configuración y firmás informes y documentos clínicos sin salir de la plataforma. El documento firmado queda guardado en la ficha del paciente.</p></details>
         <details><summary>¿Cómo funciona la receta electrónica?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Emitís la receta desde TurnIA, a través de la integración con MisRx, y se la hacés llegar a tu paciente sin salir de la plataforma.</p></details>
         <details><summary>¿Cómo funcionan los reintegros?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>TurnIA te ayuda a organizar la documentación que tus pacientes necesitan para solicitar reintegros a su obra social o prepaga, y a seguir el estado de cada uno.</p></details>
+        <details><summary>¿Puedo llevarme mis datos?<svg class="ico"><use href="#i-chevron"/></svg></summary><p>Sí. Podés exportar tu agenda, tus pacientes, tus cobros y las fichas clínicas en PDF, Word o Excel cuando quieras. Si dejás de usar TurnIA, tus datos no se borran automáticamente y tenés un plazo para descargarlos.</p></details>
       </div>
     </div>
   </div>
@@ -502,6 +564,7 @@
       <a href="software-profesionales-salud-argentina.html">Software para profesionales</a>
       <a href="agenda-turnos-whatsapp-profesionales.html">Agenda con WhatsApp</a>
       <a href="facturacion-arca-profesionales-salud.html">Facturación ARCA</a>
+      <a href="instalar.html">Instalar en el celular</a>
       <a href="legales/terminos.html">Términos y condiciones</a><a href="legales/privacidad.html">Política de privacidad</a>
     </div>
     <div>
@@ -588,9 +651,18 @@
       <button class="btn btn-primary btn-block btn-lg" id="co-pay" type="button">Empezar mi prueba gratis <svg class="ico"><use href="#i-arrow-right"/></svg></button>
       <p class="co-preview" id="co-preview" hidden>Modo preview: el alta de pruebas todavía no está conectada. Tus datos no se guardaron ni se enviaron.</p>
       <div class="co-done" id="co-done" hidden>
-        <strong>Solicitud recibida.</strong>
-        <p>Esto todavía no activa una suscripción ni genera ningún cobro.</p>
-        <p>Si es una cuenta nueva, te enviamos un email para confirmar el acceso. Si ya usabas ese correo en TurnIA, no se envía una confirmación nueva: podés <a href="https://app.turniahealth.com.ar/login">ingresar</a> o <a href="https://app.turniahealth.com.ar/forgot-password">restablecer tu contraseña</a>.</p>
+        <strong>¡Listo! Solicitud recibida.</strong>
+        <p>Esto no activa una suscripción ni genera ningún cobro.</p>
+        <ol class="co-next">
+          <li><b>Confirmá tu email.</b> Te escribimos a <span data-done-email>tu correo</span> desde TurnIA. Si no lo ves en unos minutos, revisá Spam o Promociones.</li>
+          <li><b>Abrí TurnIA en tu celular</b> e ingresá con tu email y contraseña.</li>
+          <li><b>Agregala a la pantalla de inicio</b> y tocá <b>Activar</b> en el aviso de notificaciones. <a href="instalar.html" target="_blank" rel="noopener">Ver cómo</a>.</li>
+        </ol>
+        <div class="co-qr">
+          <img src="assets/img/qr-app-turnia.svg" alt="Código QR para abrir TurnIA en el celular" width="112" height="112">
+          <p>¿Estás en la computadora? Escaneá este código con la cámara del celular para abrir TurnIA ahí. Primero confirmá tu email.</p>
+        </div>
+        <p class="co-done-note">Si ya usabas ese correo en TurnIA, no te llega una confirmación nueva: podés <a href="https://app.turniahealth.com.ar/login">ingresar</a> o <a href="https://app.turniahealth.com.ar/forgot-password">restablecer tu contraseña</a>.</p>
       </div>
       <button class="co-back" type="button" id="co-back">← Modificar mis datos</button>
       <p class="co-safe"><svg class="ico"><use href="#i-lock"/></svg>No te pedimos tarjeta. Al terminar la prueba, si querés seguir, te suscribís con Mercado Pago.</p>

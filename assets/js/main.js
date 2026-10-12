@@ -89,7 +89,7 @@
     });
   });
 
-  /* ---------- Forma de pago: mensual / 6 meses / 12 meses ---------- */
+  /* ---------- Precio del plan (hoy solo mensual) ---------- */
   var PLANS = C.billing || {};
   var billing = "mensual";
   var signupRequestId = null;
@@ -132,6 +132,7 @@
     stepTabs[0].classList.toggle("on", n === 1); stepTabs[1].classList.toggle("on", n === 2);
     document.getElementById("co-preview").hidden = true;
     document.getElementById("co-done").hidden = true; document.getElementById("co-pay").hidden = false;
+    document.getElementById("co-back").hidden = false;
   }
   function openModal() {
     lastFocus = document.activeElement;
@@ -183,6 +184,24 @@
     return C.trialSignupUrl || "";
   }
 
+  // Mensaje según el error que devuelve /api/public/trial-signup.
+  function signupErrorMessage(status, code, retryAfterSeconds) {
+    if (status === 429 || code === "too_many_attempts") {
+      var minutes = Math.max(1, Math.ceil((retryAfterSeconds || 0) / 60));
+      return "Hiciste varios intentos seguidos. Esperá " + (retryAfterSeconds ? minutes + " minuto" + (minutes === 1 ? "" : "s") : "unos minutos") + " y probá de nuevo.";
+    }
+    if (code === "not_invited" || code === "registration_closed") {
+      return "En este momento el alta online no está disponible para este correo. Escribinos por WhatsApp y te damos acceso.";
+    }
+    if (code === "legal_version_mismatch") {
+      return "Actualizamos los términos y condiciones. Recargá la página para aceptar la versión vigente y continuar.";
+    }
+    if (code === "invalid_input") {
+      return "Revisá los datos ingresados: algún campo no es válido.";
+    }
+    return "No pudimos crear tu prueba. Probá de nuevo o escribinos por WhatsApp.";
+  }
+
   document.getElementById("co-pay").addEventListener("click", function () {
     var btn = this, f = form.elements;
     var trialSignupUrl = getTrialSignupUrl();
@@ -208,10 +227,22 @@
         referrer: document.referrer || ""
       })
     }).then(function (r) {
-      if (!r.ok) throw new Error(r.status);
+      return r.json().catch(function () { return {}; }).then(function (body) {
+        if (!r.ok || !body || body.ok === false) {
+          var err = new Error("signup_failed");
+          err.status = r.status; err.code = body && body.error; err.retryAfter = body && body.retryAfterSeconds;
+          throw err;
+        }
+      });
+    }).then(function () {
+      var doneEmail = document.querySelector("[data-done-email]");
+      if (doneEmail) doneEmail.textContent = f.email.value.trim();
       document.getElementById("co-done").hidden = false; btn.hidden = true;
-    }).catch(function () {
-      errBox.textContent = "No pudimos crear tu prueba. Probá de nuevo o escribinos por WhatsApp.";
+      document.getElementById("co-back").hidden = true;
+    }).catch(function (err) {
+      // Un intento fallido queda registrado con ese requestId; el reintento necesita uno nuevo.
+      signupRequestId = newRequestId();
+      errBox.textContent = signupErrorMessage(err && err.status, err && err.code, err && err.retryAfter);
       showStep(1); errBox.hidden = false;
     }).finally(function () { btn.disabled = false; });
   });

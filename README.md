@@ -27,6 +27,7 @@ El lanzamiento comercial inicial usa:
 ```
 index.html                         Landing comercial
 ventas.html                        Formulario para equipos/instituciones
+instalar.html                      Guía para instalar la app en el celular y activar notificaciones
 legales/terminos.html              Términos y condiciones
 legales/privacidad.html            Política de privacidad
 legales/gestiones.html             Arrepentimiento y baja del servicio
@@ -34,6 +35,8 @@ assets/css/styles.css              Estilos
 assets/js/config.js                Configuración pública sin secretos
 assets/js/main.js                  Interacciones y alta de prueba
 assets/js/commercial-requests.js   Ventas y gestiones comerciales
+assets/js/instalar.js              Indicación según dispositivo en instalar.html
+assets/img/qr-app-turnia.svg       QR estático a https://app.turniahealth.com.ar/login
 assets/img/turnia-logo-original.png Logo oficial TurnIA
 sw.js                              Compatibilidad transitoria con PWA antigua
 vercel.json                        Redirects heredados + headers de seguridad
@@ -53,7 +56,9 @@ El alta y las gestiones comerciales se procesan server-side en la aplicación Tu
 - 14 días de prueba gratis sin tarjeta.
 - Mercado Pago SaaS es un circuito separado de los cobros que cada profesional hace a sus pacientes.
 - MisRx figura como integración disponible.
-- La firma digital figura como función próxima; no se comunica un proveedor definitivo hasta que la integración esté habilitada.
+- Firma digital disponible, integrada con DigiLogix.
+- Consentimiento informado electrónico disponible.
+- La app profesional se comunica como instalable en el celular (PWA) con notificaciones; no se promete que las notificaciones queden activas sin el permiso del usuario.
 - Sin testimonios inventados.
 - Las pantallas de la landing son mockups comerciales con datos ficticios.
 
