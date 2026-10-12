@@ -51,7 +51,7 @@ def inline_assets(html):
 # 1) páginas legales del proyecto
 for slug, title in PAGES.items():
     body = (ROOT / f"legales/_src/{slug}.html").read_text()
-    html = page(slug, title, body, '<link rel="stylesheet" href="../assets/css/styles.css">', "../", "../index.html")
+    html = page(slug, title, body, '<link rel="stylesheet" href="../assets/css/styles.css">', "../", "/")
     (ROOT / f"legales/{slug}.html").write_text(html)
 
 # 2) versión de un solo archivo

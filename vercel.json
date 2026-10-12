@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/auth/:path*",
       "destination": "https://app.turniahealth.com.ar/auth/:path*",
       "permanent": false
