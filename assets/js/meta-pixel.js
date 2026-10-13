@@ -10,7 +10,7 @@
  *   servidor, para que Meta no los cuente dos veces.
  */
 (function () {
-  var PIXEL_ID = ""; // Completar con el identificador del píxel (Administrador de eventos de Meta).
+  var PIXEL_ID = "1078448068354528"; // Identificador del píxel (Administrador de eventos de Meta).
   var KEY = "turnia_cookie_consent"; // "granted" | "denied"
   var loaded = false;
 
