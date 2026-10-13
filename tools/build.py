@@ -32,6 +32,7 @@ def page(slug, title, body, css_href, asset_prefix, home_href):
   <span>© 2026 TurnIA. Todos los derechos reservados.</span>
   <span><a href="terminos.html">Términos y condiciones</a> · <a href="privacidad.html">Política de privacidad</a> · <a href="gestiones.html?tipo=arrepentimiento">Arrepentimiento</a> · <a href="gestiones.html?tipo=baja">Baja del servicio</a></span>
 </div></footer>
+<script src="{asset_prefix}assets/js/meta-pixel.js"></script>
 </body>
 </html>
 '''

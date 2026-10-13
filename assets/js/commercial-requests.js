@@ -25,8 +25,16 @@
     box.textContent = text;
   }
 
+  function readCookie(name) {
+    var m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+    return m ? decodeURIComponent(m[1]) : "";
+  }
+
   function payloadFor(form) {
     var data = new FormData(form);
+    // Solo las consultas de ventas se miden en Meta, y solo con consentimiento.
+    var metaConsent = form.dataset.requestForm === "sales" &&
+      typeof window.turniaMetaConsent === "function" && window.turniaMetaConsent();
     return {
       requestId: newRequestId(),
       type: form.dataset.requestType,
@@ -38,7 +46,11 @@
       professionalCount: data.get("professionalCount") ? Number(data.get("professionalCount")) : null,
       message: String(data.get("message") || "").trim(),
       website: String(data.get("website") || "").trim(),
-      source: "commercial_web"
+      source: "commercial_web",
+      metaConsent: metaConsent,
+      metaFbp: metaConsent ? readCookie("_fbp") : "",
+      metaFbc: metaConsent ? readCookie("_fbc") : "",
+      pageUrl: window.location.href.split("#")[0]
     };
   }
 
@@ -55,15 +67,19 @@
       if (button) button.disabled = true;
       showResult(form, true, "Enviando solicitud…");
 
+      var payload = payloadFor(form);
       fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payloadFor(form))
+        body: JSON.stringify(payload)
       }).then(function (response) {
         if (!response.ok) throw new Error(String(response.status));
         return response.json();
       }).then(function (body) {
         var code = body && body.requestCode ? body.requestCode : "";
+        if (form.dataset.requestForm === "sales" && window.turniaTrack) {
+          window.turniaTrack("Lead", { content_name: "Contacto de ventas" }, payload.requestId);
+        }
         var notification = body && body.notification ? body.notification : null;
         var emailWarning = notification && (notification.userEmail === false || notification.internalEmail === false);
 

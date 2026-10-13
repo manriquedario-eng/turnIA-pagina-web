@@ -7,7 +7,11 @@ module.exports = async function handler(req, res) {
   try {
     const response = await fetch('https://app.turniahealth.com.ar/api/public/commercial-request', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-turnia-client-ip': String(req.headers['x-forwarded-for'] || '').split(',')[0].trim(),
+        'x-turnia-client-ua': String(req.headers['user-agent'] || '').slice(0, 500),
+      },
       body: JSON.stringify(req.body || {}),
     });
 

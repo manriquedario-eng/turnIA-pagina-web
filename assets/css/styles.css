@@ -761,3 +761,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 @media (max-width:760px){.ai-band{padding:22px 18px}.ai-steps li{font-size:14px}.co-qr{display:none}.install-qr{flex-direction:column;text-align:center}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ai-steps .n,:root:not([data-theme="light"]) .install-steps li::before{color:#062520}}
 :root[data-theme="dark"] .ai-steps .n,:root[data-theme="dark"] .install-steps li::before{color:#062520}
+
+/* Aviso de cookies de medición (Meta) */
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:720px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow);padding:14px 16px;font-size:14px;line-height:1.45}
+.cookie-banner p{margin:0;flex:1 1 300px}
+.cookie-banner a{color:var(--teal-700);text-decoration:underline}
+.cookie-actions{display:flex;gap:8px;margin-left:auto}
+.cookie-actions .btn{padding:10px 16px;font-size:14px}

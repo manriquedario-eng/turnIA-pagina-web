@@ -202,8 +202,17 @@
     return "No pudimos crear tu prueba. Probá de nuevo o escribinos por WhatsApp.";
   }
 
+  // Cookies de Meta (_fbp/_fbc): el servidor las usa para atribuir la conversión.
+  function readCookie(name) {
+    var m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+    return m ? decodeURIComponent(m[1]) : "";
+  }
+
   document.getElementById("co-pay").addEventListener("click", function () {
     var btn = this, f = form.elements;
+    var requestId = signupRequestId || newRequestId();
+    signupRequestId = requestId;
+    var metaConsent = typeof window.turniaMetaConsent === "function" && window.turniaMetaConsent();
     var trialSignupUrl = getTrialSignupUrl();
     if (!trialSignupUrl) { document.getElementById("co-preview").hidden = false; return; }
     btn.disabled = true;
@@ -211,7 +220,7 @@
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        requestId: signupRequestId || newRequestId(),
+        requestId: requestId,
         nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(),
         password: f.password.value,
         whatsapp: f.whatsapp.value.trim(), profesion: f.profesion.value, cuit: f.cuit.value.trim(),
@@ -224,7 +233,11 @@
         utmSource: new URLSearchParams(window.location.search).get("utm_source") || "",
         utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "",
         utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
-        referrer: document.referrer || ""
+        referrer: document.referrer || "",
+        metaConsent: metaConsent,
+        metaFbp: metaConsent ? readCookie("_fbp") : "",
+        metaFbc: metaConsent ? readCookie("_fbc") : "",
+        pageUrl: window.location.href.split("#")[0]
       })
     }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (body) {
@@ -235,6 +248,7 @@
         }
       });
     }).then(function () {
+      if (window.turniaTrack) window.turniaTrack("CompleteRegistration", { content_name: "Prueba gratis 14 días", status: "pending_email" }, requestId);
       var doneEmail = document.querySelector("[data-done-email]");
       if (doneEmail) doneEmail.textContent = f.email.value.trim();
       document.getElementById("co-done").hidden = false; btn.hidden = true;
