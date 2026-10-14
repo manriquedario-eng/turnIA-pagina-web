@@ -389,6 +389,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 
 /* =================== CONTACTO =================== */
+.modal-card.video-modal-card{max-width:1040px;padding:0;background:#000;overflow:hidden}
+.video-modal-card video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.video-modal-card .modal-x{z-index:1;background:rgba(255,255,255,.92)}
 .contact-modal-card{max-width:620px}
 .contact-modal-card h3{font-size:24px;color:var(--navy);letter-spacing:-.02em;margin:2px 0 0}
 .contact-form{display:grid;gap:14px}

@@ -147,7 +147,7 @@
       <p class="hero-sub">TurnIA reúne agenda, pacientes, cobros, facturación ARCA, recetas, reintegros, automatizaciones y métricas en una sola plataforma.</p>
       <div class="hero-ctas">
         <a href="#precios" class="btn btn-primary btn-lg">Probá 14 días gratis <svg class="ico"><use href="#i-arrow-right"/></svg></a>
-        <a href="#como-funciona" class="btn btn-ghost btn-lg"><svg class="ico ico-teal"><use href="#i-play"/></svg> Ver cómo funciona</a>
+        <a href="#como-funciona" class="btn btn-ghost btn-lg" data-video aria-haspopup="dialog"><svg class="ico ico-teal"><use href="#i-play"/></svg> Ver cómo funciona</a>
       </div>
       <p class="hero-note">14 días gratis · Sin tarjeta de crédito</p>
       <ul class="hero-trust">
@@ -595,6 +595,16 @@
 
 
 <!-- ======================= CONTACTO ======================= -->
+<div class="modal" id="video-modal" hidden role="dialog" aria-modal="true" aria-label="Video: así funciona TurnIA">
+  <div class="modal-backdrop" data-video-close></div>
+  <div class="modal-card video-modal-card">
+    <button class="modal-x" type="button" data-video-close aria-label="Cerrar video"><svg class="ico"><use href="#i-close"/></svg></button>
+    <video controls playsinline preload="none" poster="assets/video/turnia-como-funciona.jpg">
+      <source src="assets/video/turnia-como-funciona.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
 <div class="modal" id="contact-modal" hidden role="dialog" aria-modal="true" aria-labelledby="contact-title">
   <div class="modal-backdrop" data-contact-close></div>
   <div class="modal-card contact-modal-card">

@@ -53,6 +53,40 @@
     });
   }
 
+  /* ---------- Video "Cómo funciona" ---------- */
+  var videoModal = document.getElementById("video-modal");
+  var videoEl = videoModal ? videoModal.querySelector("video") : null;
+  var videoLastFocus = null;
+  function openVideo(event) {
+    if (!videoModal || !videoEl) return; // sin modal, el enlace baja a la sección
+    event.preventDefault();
+    videoLastFocus = document.activeElement;
+    videoModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    var playing = videoEl.play();
+    if (playing && typeof playing.catch === "function") playing.catch(function () {});
+    var x = videoModal.querySelector(".modal-x");
+    if (x) setTimeout(function () { x.focus(); }, 30);
+  }
+  function closeVideo() {
+    if (!videoModal || videoModal.hidden) return;
+    videoEl.pause();
+    videoModal.hidden = true;
+    document.body.style.overflow = "";
+    if (videoLastFocus && typeof videoLastFocus.focus === "function") videoLastFocus.focus();
+  }
+  document.querySelectorAll("[data-video]").forEach(function (a) {
+    a.addEventListener("click", openVideo);
+  });
+  if (videoModal) {
+    videoModal.querySelectorAll("[data-video-close]").forEach(function (el) {
+      el.addEventListener("click", closeVideo);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeVideo();
+    });
+  }
+
   /* ---------- Header ---------- */
   var header = document.querySelector(".site-header");
   var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 8); };
