@@ -63,6 +63,7 @@
     videoLastFocus = document.activeElement;
     videoModal.hidden = false;
     document.body.style.overflow = "hidden";
+    document.body.classList.add("video-open");
     var playing = videoEl.play();
     if (playing && typeof playing.catch === "function") playing.catch(function () {});
     var x = videoModal.querySelector(".modal-x");
@@ -73,6 +74,7 @@
     videoEl.pause();
     videoModal.hidden = true;
     document.body.style.overflow = "";
+    document.body.classList.remove("video-open");
     if (videoLastFocus && typeof videoLastFocus.focus === "function") videoLastFocus.focus();
   }
   document.querySelectorAll("[data-video]").forEach(function (a) {
