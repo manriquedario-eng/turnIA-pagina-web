@@ -9,8 +9,8 @@
  */
 window.TURNIA_CONFIG = {
   // Datos comerciales
-  whatsappNumber: "5492622699534",           // +54 9 2622 699534 (formato wa.me)
-  whatsappDisplay: "+54 9 2622 699534",
+  whatsappNumber: "5492613470928",           // +54 9 261 347 0928 (formato wa.me)
+  whatsappDisplay: "+54 9 261 347 0928",
   salesEmail: "ventas@turniahealth.com.ar",
 
   // Plan
