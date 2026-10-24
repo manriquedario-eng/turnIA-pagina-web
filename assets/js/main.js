@@ -232,6 +232,9 @@
     if (code === "legal_version_mismatch") {
       return "Actualizamos los términos y condiciones. Recargá la página para aceptar la versión vigente y continuar.";
     }
+    if (code === "profession_not_available") {
+      return "Por ahora TurnIA está disponible para medicina clínica, psicología, psiquiatría, kinesiología y odontología. Escribinos por WhatsApp y te avisamos cuando sumemos tu profesión.";
+    }
     if (code === "invalid_input") {
       return "Revisá los datos ingresados: algún campo no es válido.";
     }
