@@ -32,7 +32,7 @@ window.TURNIA_CONFIG = {
 
   // Alta de la prueba gratis (sin tarjeta). Endpoint del backend que recibe los datos
   // del formulario (POST JSON) y envía el email de acceso. Vacío = modo preview.
-  // Flujo: datos → alta de prueba → email con acceso → a los 14 días, suscripción con Mercado Pago.
+  // Flujo: datos → alta de prueba → email con acceso → a los 14 días, pago mensual con Talo (Mercado Pago o transferencia).
   trialSignupUrl: "https://app.turniahealth.com.ar/api/public/trial-signup",
   commercialRequestUrl: "/api/commercial-request",
 
